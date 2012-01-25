@@ -1,0 +1,18 @@
+!!!5
+%html{:class => "no-js", :lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}
+    %title Ruby on Rails app
+    %script{:src => "http://html5shim.googlecode.com/svn/trunk/html5.js"}
+
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+
+  .container 
+    = render 'shared/nav'
+
+    - flash.each do |key, msg|
+      = content_tag :div, msg, :class => "#{key}" 
+
+    =yield
