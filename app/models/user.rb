@@ -3,8 +3,7 @@ class User
   include Mongoid::Document
   include Mongoid::Timestamps
   
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
     
   # Validation    
   validates_presence_of :name
