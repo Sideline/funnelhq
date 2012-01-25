@@ -28,3 +28,9 @@ RSpec.configure do |config|
   end
 end
 
+def login_user
+  User.destroy_all
+  @user = Factory.create(:user)
+  sign_in @user  
+end
+

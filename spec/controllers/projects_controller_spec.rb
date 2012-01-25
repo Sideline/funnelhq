@@ -7,9 +7,7 @@ describe ProjectsController do
   # update the return value of this method accordingly.
   
   before :each do
-    User.destroy_all
-    @user = Factory.create(:user)
-    sign_in @user
+    login_user
   end
   
   def valid_attributes
