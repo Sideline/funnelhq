@@ -5,7 +5,8 @@ class User
   
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
     
-  # Validation    
+  # Validation 
+     
   validates_presence_of :name
   validates_uniqueness_of :name, :email, :case_sensitive => false
   
@@ -14,9 +15,23 @@ class User
   embeds_many :projects
   
   # Attr Accessors
+  
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
   
-  # Structure
+  # Schema
+  
   field :name
   
+  # Returns number of projects for a user
+  
+  def number_of_projects
+    self.projects.count
+  end
+  
+  # Returns projects created in the last two weeks
+  
+  def recent_projects
+    self.projects.criteria.and(:updated_at.gt => 2.weeks.ago)
+  end
+    
 end

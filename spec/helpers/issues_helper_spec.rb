@@ -1,9 +1,9 @@
 require 'spec_helper'
 
 # Specs in this file have access to a helper object that includes
-# the DashboardsHelper. For example:
+# the IssuesHelper. For example:
 #
-# describe DashboardsHelper do
+# describe IssuesHelper do
 #   describe "string concat" do
 #     it "concats two strings with spaces" do
 #       helper.concat_strings("this","that").should == "this that"
@@ -11,6 +11,6 @@ require 'spec_helper'
 #   end
 # end
 
-describe DashboardsHelper do
-  
+describe IssuesHelper do
+ 
 end

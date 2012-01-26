@@ -6,8 +6,6 @@ class PagesController < ApplicationController
   
   # Application static homepage
   def index
-    @users = User.all
-    respond_with(@users)
   end
 
 end
