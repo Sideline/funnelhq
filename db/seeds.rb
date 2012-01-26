@@ -14,9 +14,9 @@ def create_user name, email, password
   puts 'New user created: ' << user.name
 end
 
-def create_project name, description
-  
-end
-
+# Drop all data in the database
 empty_database!
+
+# Add a default users
 create_user('Owain Lewis', 'owain@owainlewis.com', 'testing')
+create_user('Admin user', 'admin@test.com', 'testing')
