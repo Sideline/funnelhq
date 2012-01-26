@@ -2,10 +2,10 @@ class ProjectsController < ApplicationController
   
   respond_to :html
   
-  before_filter :find_all_projects, :only => [:index]
   before_filter :find_project, :only => [:edit, :update, :destroy]
   
   def index
+    @projects = @user.projects.all
     respond_with @projects
   end
 
@@ -53,10 +53,6 @@ class ProjectsController < ApplicationController
   end
   
   private 
-  
-  def find_all_projects
-    @projects = @user.projects.all
-  end
   
   def find_project
     @project = @user.projects.find(params[:id])

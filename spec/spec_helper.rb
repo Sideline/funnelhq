@@ -23,13 +23,15 @@ RSpec.configure do |config|
   # rspec-rails.
   config.infer_base_class_for_anonymous_controllers = false
   
-  RSpec.configure do |config|
-    config.include Devise::TestHelpers, :type => :controller
+  config.before :each do
+    Mongoid.master.collections.select {|c| c.name !~ /system/ }.each(&:drop)
   end
+
+  config.include Devise::TestHelpers, :type => :controller
+
 end
 
 def login_user
-  User.destroy_all
   @user = Factory.create(:user)
   sign_in @user  
 end

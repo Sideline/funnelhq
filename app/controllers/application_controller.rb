@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   
   before_filter :find_user
   
-  # 
+  # Used in all controllers to find the current user
   def find_user
     @user = current_user
   end
