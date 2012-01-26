@@ -735,7 +735,12 @@ body {
   padding: 20px;
   overflow: hidden; }
 
-#sidebar {float:left;width:200px;height:100%;background:#333;min-height:1000px;margin-right:40px;padding-top:40px;padding-left:20px;}
+#sidebar {float:left;width:200px;height:100%;background:#333;min-height:1500px;margin-right:40px;padding-top:40px;}
+#sidebar li {list-style:none;height:80px;line-height:80px;border-bottom:1px solid #555;overflow:hidden;padding-left:20px;}
 #sidebar a {color:#eee;font-size:16px;}
-#main {float:left;min-width:600px;max-width:1000px;padding-top:40px;}
+#main {float:left;min-width:900px;max-width:1200px;padding-top:80px;}
+#nav {position:absolute;top:0;height:40px;background:#222;width:100%;}
+#nav ul {float:right;width:100%;}
+#nav li {list-style:none;display:inline;line-height:40px;margin-left:20px;}
+#nav a {color:#fff;}
 

@@ -8,12 +8,17 @@
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
-
+  
+  #nav
+    = render 'shared/nav'
 
   %body
     #sidebar
-      = render 'shared/nav'
-
+      %ul
+        - @user.projects.each do |project|
+          %li
+            = link_to project.title, project
+  
   #main
     - flash.each do |key, msg|
       = content_tag :div, msg, :class => "#{key}" 
