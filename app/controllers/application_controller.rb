@@ -6,8 +6,21 @@ class ApplicationController < ActionController::Base
   
   before_filter :find_user
   
+  layout :layout_by_resource
+  
+  private 
+  
   # Used in all controllers to find the current user
   def find_user
     @user = current_user
   end
+  
+  def layout_by_resource
+    if devise_controller?
+      "devise"
+    else
+      "application"
+    end
+  end
+    
 end

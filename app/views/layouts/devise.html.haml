@@ -5,22 +5,12 @@
     %title Ruby on Rails app
     %script{:src => "http://html5shim.googlecode.com/svn/trunk/html5.js"}
 
-<<<<<<< HEAD
-    = stylesheet_link_tag    "pages"
-    = csrf_meta_tags
-  
-  %body
-
-  #main.container
-    = link_to('Login', new_user_session_path) 
-=======
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
 
-  %body
+  %body#devise
 
     = link_to 'Login', new_user_session_path
 
->>>>>>> 7a55de974b5827416cebe3bad55fb447d54dfcf8
     =yield
