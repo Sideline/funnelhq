@@ -1,6 +1,6 @@
 class Issue
   
-  include Mongoid::Document
+  include Core::Mongoid::Document
   
   # Schema
   
