@@ -1,0 +1,24 @@
+<div id='chart_div'></div>
+
+<script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Task');
+        data.addColumn('number', 'Hours per Day');
+        data.addRows([
+          ['Clients',    11],
+          ['Projects',      2],
+          ['Issues',  2]
+        ]);
+
+        var options = {
+          width: 650, height: 300,
+          title: 'Project Overview'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+</script>

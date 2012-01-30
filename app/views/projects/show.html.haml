@@ -4,6 +4,8 @@
 %p= @project.description
 %p== Project type: #{@project.project_type}
 
+%p== No Issues: #{@issues.count}
+
 = link_to 'Edit', edit_project_path(@project)
 \|
 = link_to 'Back', projects_path

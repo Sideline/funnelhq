@@ -18,9 +18,10 @@ class Project
   ## associations ##
   
   embedded_in :user, :inverse_of => :projects
+  embeds_many :issues
   
   ## scopes ##
   
   scope :recent, order_by(:created_at => :desc).limit(100)
-  
+    
 end

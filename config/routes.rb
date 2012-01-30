@@ -7,14 +7,15 @@ Baseapp::Application.routes.draw do
   devise_for :users, :path_names => { :sign_in => 'login', :sign_up => 'new', :sign_out => 'logout', :password => 'password', :confirmation => 'confirmation' }
   
   # When we log in a user through Devise, redirect them to the dashboard
-  match '/user', :to => "dashboards#index"
+  match '/user', :to => "dashboards#index", :as => :user_root
   
   # Project dashboard
   match "dashboard", :to => "dashboards#index"
   
   # Resource routes
-  resources :projects
-  resources :issues
+  resources :projects do
+    resources :issues
+  end
     
   # Default route
   root :to => 'pages#index'

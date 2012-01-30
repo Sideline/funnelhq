@@ -2,13 +2,14 @@ class ClientsController < ApplicationController
   
   respond_to :html
   
+  before_filter :find_client, :only => [:show, :edit, :update, :destroy]
+  
   def index
     @clients = Client.all
     respond_with @clients
   end
 
   def show
-    @client = Client.find(params[:id])
     respond_with @client
   end
 
@@ -18,7 +19,6 @@ class ClientsController < ApplicationController
   end
 
   def edit
-    @client = Client.find(params[:id])
   end
 
   def create
@@ -34,8 +34,6 @@ class ClientsController < ApplicationController
   end
 
   def update
-    @client = Client.find(params[:id])
-
     respond_to do |format|
       if @client.update_attributes(params[:client])
         format.html { redirect_to @client, notice: 'Client was successfully updated.' }
@@ -46,11 +44,16 @@ class ClientsController < ApplicationController
   end
 
   def destroy
-    @client = Client.find(params[:id])
     @client.destroy
 
     respond_to do |format|
       format.html { redirect_to clients_url }
     end
+  end
+  
+  private 
+  
+  def find_client
+    @client = Client.find(params[:id])
   end
 end

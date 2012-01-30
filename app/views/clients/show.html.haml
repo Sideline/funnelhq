@@ -1,17 +1,9 @@
 %p#notice= notice
 
-%p
-  %b First name:
-  = @client.first_name
-%p
-  %b Last name:
-  = @client.last_name
-%p
-  %b Email:
-  = @client.email
-%p
-  %b Telephone:
-  = @client.telephone
+%h1= @client.first_name
+%p= @client.last_name
+%p= @client.email
+%p= @client.telephone
 
 = link_to 'Edit', edit_client_path(@client)
 \|
