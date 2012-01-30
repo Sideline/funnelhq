@@ -15,9 +15,8 @@
   %body
     #sidebar
       %ul
-        - @user.projects.each do |project|
-          %li
-            = link_to project.title, project
+        %li= link_to 'Projects', projects_path
+        %li= link_to 'Clients', clients_path
   
   #main
     - flash.each do |key, msg|

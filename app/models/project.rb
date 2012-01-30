@@ -2,20 +2,24 @@ class Project
   
   include Core::Mongoid::Document
   
-  Types = %w(admin internal client)
+  TYPES = %w(admin internal client)
 
-  # Schema
+  ## fields ##
   
   field :title, :type => String
-  field :project_type, :type => String
+  field :project_type, :type => String, :default => "None"
   field :description, :type => String
+  
+  ## validations ##
   
   validates_presence_of :title
   validates_presence_of :description
   
+  ## associations ##
+  
   embedded_in :user, :inverse_of => :projects
   
-  # Scopes 
+  ## scopes ##
   
   scope :recent, order_by(:created_at => :desc).limit(100)
   

@@ -4,20 +4,20 @@ class User
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
     
-  # Validation 
+  ## Validation ##
      
   validates_presence_of :first_name, :last_name
   validates_uniqueness_of :email, :case_sensitive => false
   
-  # Relationships
+  ## associations ##
   
   embeds_many :projects
   
-  # Attr Accessors
+  ## Attr Accessors ##
   
   attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me
   
-  # Schema
+  ## fields ##
   
   field :first_name
   field :last_name

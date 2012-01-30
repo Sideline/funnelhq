@@ -1,12 +1,5 @@
 %h1 Dashboard
 %p This is your dashboard
 
-%p== You have #{pluralize @projects.count, 'project'}
 
-%p= link_to "All projects", projects_path
-%p= link_to "Create new project", new_project_path
-
-%h2 My Recent Projects
-- @user.recent_projects.each do |project|
-  = project.title
 
