@@ -1,6 +1,9 @@
 class Project
   
   include Core::Mongoid::Document
+  include Mongoid::Paperclip
+
+  has_mongoid_attached_file :docs
   
   TYPES = %w(admin internal client)
 
@@ -18,7 +21,6 @@ class Project
   ## associations ##
   
   embedded_in :user, :inverse_of => :projects
-  embeds_many :issues
   
   ## scopes ##
   

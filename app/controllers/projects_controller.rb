@@ -10,7 +10,6 @@ class ProjectsController < ApplicationController
 
   def show
     @project = @user.projects.find(params[:id])
-    @issues = @project.issues
     respond_with @project
   end
 

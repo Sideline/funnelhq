@@ -12,7 +12,7 @@ describe ClientsController do
 
   describe "GET index" do
     it "assigns all clients as @clients" do
-      client = Client.create! valid_attributes
+      client = Factory(:client)
       get :index
       assigns(:clients).should eq([client])
     end

@@ -19,9 +19,7 @@ class Issue
   validates_presence_of :status
   
   ## associations ##
-  
-  embedded_in :project, :inverse_of => :issues
-  
+    
   ## scopes ##
   
   scope :recent, order_by(:created_at => :desc).limit(100)

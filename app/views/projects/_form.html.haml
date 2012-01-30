@@ -1,4 +1,4 @@
-= form_for @project do |f|
+= form_for @project, :html => { :multipart => true } do |f|
   -if @project.errors.any?
     #error_explanation
       %h2= "#{pluralize(@project.errors.count, "error")} prohibited this project from being saved:"
@@ -9,6 +9,9 @@
   .field
     = f.label :title
     = f.text_field :title
+
+  .field
+    = f.file_field :docs
 
   .field
     = f.label :project_type

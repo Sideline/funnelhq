@@ -13,6 +13,7 @@ gem "bson_ext", ">= 1.3.1"
 gem "mongoid", ">= 2.3.3"
 gem "haml-rails"
 gem "devise"
+gem "mongoid-paperclip", :require => "mongoid_paperclip"
 
 # Pagination for Rails 3
 #gem 'kaminari'
@@ -20,7 +21,6 @@ gem "devise"
 group :development, :test do
   gem "rspec-rails", ">= 2.8.0.rc1"
   gem "mongoid-rspec"
-  #gem "thin"
   gem "factory_girl_rails"
 end
 

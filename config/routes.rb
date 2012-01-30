@@ -13,9 +13,10 @@ Baseapp::Application.routes.draw do
   match "dashboard", :to => "dashboards#index"
   
   # Resource routes
-  resources :projects do
-    resources :issues
-  end
+  
+  resources :projects
+  
+  resources :issues
     
   # Default route
   root :to => 'pages#index'
