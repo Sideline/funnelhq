@@ -1,11 +1,7 @@
 class User
   
-<<<<<<< HEAD
-  Mongoid::Document
-=======
   include Core::Mongoid::Document
->>>>>>> 7a55de974b5827416cebe3bad55fb447d54dfcf8
-  
+
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
     
   # Validation 
