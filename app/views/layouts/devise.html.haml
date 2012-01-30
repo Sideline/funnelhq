@@ -9,12 +9,8 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
 
-  %body
-    #sidebar
-      = render 'shared/nav'
+  %body#devise
 
-  #main
-    - flash.each do |key, msg|
-      = content_tag :div, msg, :class => "#{key}" 
+    = link_to 'Login', new_user_session_path
 
     =yield

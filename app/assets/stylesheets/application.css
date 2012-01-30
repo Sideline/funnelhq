@@ -739,3 +739,5 @@ body {
 #sidebar a {color:#eee;font-size:16px;}
 #main {float:left;min-width:600px;max-width:1000px;padding-top:40px;}
 
+#devise #login {width:300px;margin:0 auto;}
+

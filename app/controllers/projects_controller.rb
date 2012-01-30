@@ -1,9 +1,8 @@
 class ProjectsController < ApplicationController
   
   respond_to :html
-  
   before_filter :find_project, :only => [:edit, :update, :destroy]
-  
+
   def index
     @projects = @user.projects.all
     respond_with @projects

@@ -1,11 +1,13 @@
 class Project
   
-  include Mongoid::Document
-  include Mongoid::Timestamps
+  include Core::Mongoid::Document
+  
+  Types = %w(admin internal client)
   
   # Schema
   
   field :title, :type => String
+  field :project_type, :type => String
   field :description, :type => String
   
   validates_presence_of :title
