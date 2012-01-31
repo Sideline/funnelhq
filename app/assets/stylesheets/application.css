@@ -735,6 +735,7 @@ body {
   padding: 20px;
   overflow: hidden; }
 
+#home{width:940px;}
 #sidebar {float:left;width:20%;height:100%;background:#222;min-height:1500px;margin-right:40px;padding-top:40px;min-width:200px;}
 #sidebar li {list-style:none;height:80px;line-height:80px;border-bottom:1px solid #333;overflow:hidden;padding-left:20px;}
 #sidebar a {color:#eee;font-size:14px;}
@@ -744,7 +745,7 @@ body {
 #nav li {list-style:none;display:inline;line-height:40px;margin-left:20px;}
 #nav a {color:#fff;}
 
-#devise #login {width:300px;margin:0 auto;}
+#devise #login {width:300px;margin:40px auto;background:#eee;border:1px solid #999;padding:20px}
 
 .update {height:40px;line-height:40px;background:#ccc;border:1px solid #888;padding:5px;color:#fff;margin-bottom:10px;}
 

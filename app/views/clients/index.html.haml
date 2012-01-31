@@ -1,25 +1,28 @@
 %h1 Listing clients
 
-%table
-  %tr
-    %th First name
-    %th Last name
-    %th Email
-    %th Telephone
-    %th
-    %th
-    %th
-
-  - @clients.each do |client|
+- if @clients.blank?
+  %p You don't have any clients yet.
+- else
+  %table
     %tr
-      %td= client.first_name
-      %td= client.last_name
-      %td= client.email
-      %td= client.telephone
-      %td= link_to 'Show', client
-      %td= link_to 'Edit', edit_client_path(client)
-      %td= link_to 'Destroy', client, :confirm => 'Are you sure?', :method => :delete
+      %th First name
+      %th Last name
+      %th Email
+      %th Telephone
+      %th
+      %th
+      %th
 
-%br
+    - @clients.each do |client|
+      %tr
+        %td= client.first_name
+        %td= client.last_name
+        %td= client.email
+        %td= client.telephone
+        %td= link_to 'Show', client
+        %td= link_to 'Edit', edit_client_path(client)
+        %td= link_to 'Destroy', client, :confirm => 'Are you sure?', :method => :delete
 
-= link_to 'New Client', new_client_path
+  %br
+
+= link_to 'New Client', new_client_path, :class => 'button'

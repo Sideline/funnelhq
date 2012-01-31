@@ -8,14 +8,14 @@ def empty_database!
   Mongoid.master.collections.reject { |c| c.name =~ /^system/}.each(&:drop)
 end
 
-def create_user name, email, password
+def create_user first_name, last_name, email, password
   puts 'SETTING UP DEFAULT USER LOGIN'
-  user = User.create! :name => name, :email => email, :password => password, :password_confirmation => password
-  puts 'New user created: ' << user.name
+  user = User.create! :first_name => first_name, :last_name => last_name, :email => email, :password => password, :password_confirmation => password
+  puts 'New user created: ' << user.email
 end
 
 # Drop all data in the database
 empty_database!
 
 # Add a default users
-create_user('admin', 'admin@test.com', 'testing')
+create_user('Aphex', 'Twin', 'admin@test.com', 'testing')

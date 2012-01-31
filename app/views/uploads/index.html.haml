@@ -1,23 +1,26 @@
 %h1 Listing uploads
 
-%table
-  %tr
-    %th Title
-    %th Category
-    %th Type
-    %th
-    %th
-    %th
-
-  - @uploads.each do |upload|
+- if @uploads.blank?
+  %p You haven't uploaded any files yet.
+-else
+  %table
     %tr
-      %td= upload.title
-      %td= upload.category
-      %td= upload.file_content_type
-      %td= link_to 'Show', upload
-      %td= link_to 'Edit', edit_upload_path(upload)
-      %td= link_to 'Destroy', upload, :confirm => 'Are you sure?', :method => :delete
+      %th Title
+      %th Category
+      %th Type
+      %th
+      %th
+      %th
 
-%br
+    - @uploads.each do |upload|
+      %tr
+        %td= upload.title
+        %td= upload.category
+        %td= upload.file_content_type
+        %td= link_to 'Show', upload
+        %td= link_to 'Edit', edit_upload_path(upload)
+        %td= link_to 'Destroy', upload, :confirm => 'Are you sure?', :method => :delete
 
-= link_to 'New Upload', new_upload_path
+  %br
+
+= link_to 'New Upload', new_upload_path, :class => 'button'
