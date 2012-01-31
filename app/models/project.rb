@@ -2,7 +2,7 @@ class Project
   
   include Core::Mongoid::Document
   
-  TYPES = %w(admin internal client personal)
+  TYPES = %w(admin internal client personal).map {|type| type.upcase}
 
   ## fields ##
   
@@ -23,6 +23,8 @@ class Project
   ## scopes ##
   
   scope :recent, order_by(:created_at => :desc).limit(5)
+  scope :active, :where => {:project_active => true}
+  scope :closed, :where => {:project_active => false}
   
   ## methods ##
   

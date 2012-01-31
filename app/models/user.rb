@@ -31,22 +31,18 @@ class User
     
   end
   
-  # Returns number of projects for a user
   def number_of_projects
     self.projects.count
   end
   
-  # Returns projects created in the last two weeks
   def recent_projects
     self.projects.criteria.and(:updated_at.gt => 2.weeks.ago)
   end
   
-  # Returns a users full name
   def full_name
     "#{self.first_name} #{self.last_name}"
   end
-  
-  # Returns true if user is an admin user
+
   def admin?
     self.role.downcase == "admin"
   end
