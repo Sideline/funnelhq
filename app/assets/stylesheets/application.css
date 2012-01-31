@@ -61,9 +61,9 @@ table {
 
 body, h1, h2, h3, h4, h5, h6, p, ul, ol, dl, input, textarea {
   line-height: 20px;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: verdana, arial, helvetica, sans-serif;
   color: #666666;
-  font-size: 14px; }
+  font-size: 13px; }
 
 p {
   margin-bottom: 20px; }
@@ -735,14 +735,16 @@ body {
   padding: 20px;
   overflow: hidden; }
 
-#sidebar {float:left;width:200px;height:100%;background:#333;min-height:1500px;margin-right:40px;padding-top:40px;}
-#sidebar li {list-style:none;height:80px;line-height:80px;border-bottom:1px solid #555;overflow:hidden;padding-left:20px;}
-#sidebar a {color:#eee;font-size:16px;}
-#main {float:left;min-width:900px;max-width:1200px;padding-top:80px;}
+#sidebar {float:left;width:20%;height:100%;background:#222;min-height:1500px;margin-right:40px;padding-top:40px;min-width:200px;}
+#sidebar li {list-style:none;height:80px;line-height:80px;border-bottom:1px solid #333;overflow:hidden;padding-left:20px;}
+#sidebar a {color:#eee;font-size:14px;}
+#main {float:left;padding-top:80px;width:70%;min-width:500px;}
 #nav {position:absolute;top:0;height:40px;background:#222;width:100%;}
 #nav ul {float:right;width:100%;}
 #nav li {list-style:none;display:inline;line-height:40px;margin-left:20px;}
 #nav a {color:#fff;}
 
 #devise #login {width:300px;margin:0 auto;}
+
+.update {height:40px;line-height:40px;background:#ccc;border:1px solid #888;padding:5px;color:#fff;margin-bottom:10px;}
 

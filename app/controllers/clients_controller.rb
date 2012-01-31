@@ -5,7 +5,7 @@ class ClientsController < ApplicationController
   before_filter :find_client, :only => [:show, :edit, :update, :destroy]
   
   def index
-    @clients = Client.all
+    @clients = @user.clients.all
     respond_with @clients
   end
 
@@ -14,7 +14,7 @@ class ClientsController < ApplicationController
   end
 
   def new
-    @client = Client.new
+    @client = @user.clients.new
     respond_with @client
   end
 
@@ -22,7 +22,7 @@ class ClientsController < ApplicationController
   end
 
   def create
-    @client = Client.new(params[:client])
+    @client = @user.clients.new(params[:client])
 
     respond_to do |format|
       if @client.save
@@ -54,6 +54,6 @@ class ClientsController < ApplicationController
   private 
   
   def find_client
-    @client = Client.find(params[:id])
+    @client = @user.clients.find(params[:id])
   end
 end

@@ -45,7 +45,6 @@ describe ProjectsController do
   describe "POST create" do
     describe "with valid params" do
       it "creates a new Project" do
-
       end
 
       it "assigns a newly created project as @project" do
@@ -62,14 +61,12 @@ describe ProjectsController do
 
     describe "with invalid params" do
       it "assigns a newly created but unsaved project as @project" do
-        # Trigger the behavior that occurs when invalid params are submitted
         @user.projects.any_instance.stub(:save).and_return(false)
         post :create, :project => {}
         assigns(:project).should be_a_new(Project)
       end
 
       it "re-renders the 'new' template" do
-        # Trigger the behavior that occurs when invalid params are submitted
         @user.projects.any_instance.stub(:save).and_return(false)
         post :create, :project => {}
         response.should render_template("new")
@@ -81,7 +78,6 @@ describe ProjectsController do
     describe "with valid params" do
       it "updates the requested project" do
         project = @user.projects.create! valid_attributes
-    
         @user.projects.any_instance.should_receive(:update_attributes).with({'these' => 'params'})
         put :update, :id => project.id, :project => {'these' => 'params'}
       end
@@ -102,7 +98,6 @@ describe ProjectsController do
     describe "with invalid params" do
       it "assigns the project as @project" do
         project = @user.projects.create! valid_attributes
-        # Trigger the behavior that occurs when invalid params are submitted
         @user.projects.any_instance.stub(:save).and_return(false)
         put :update, :id => project.id, :project => {}
         assigns(:project).should eq(project)
@@ -110,7 +105,6 @@ describe ProjectsController do
 
       it "re-renders the 'edit' template" do
         project = @user.projects.create! valid_attributes
-        # Trigger the behavior that occurs when invalid params are submitted
         @user.projects.any_instance.stub(:save).and_return(false)
         put :update, :id => project.id, :project => {}
         response.should render_template("edit")

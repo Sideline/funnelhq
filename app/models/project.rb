@@ -1,17 +1,15 @@
 class Project
   
   include Core::Mongoid::Document
-  include Mongoid::Paperclip
-
-  has_mongoid_attached_file :docs
   
-  TYPES = %w(admin internal client)
+  TYPES = %w(admin internal client personal)
 
   ## fields ##
   
   field :title, :type => String
   field :project_type, :type => String, :default => "None"
   field :description, :type => String
+  field :project_active, :type => Boolean, :default => :true
   
   ## validations ##
   
@@ -24,6 +22,12 @@ class Project
   
   ## scopes ##
   
-  scope :recent, order_by(:created_at => :desc).limit(100)
+  scope :recent, order_by(:created_at => :desc).limit(5)
+  
+  ## methods ##
+  
+  def active?
+    self.project_active
+  end
     
 end

@@ -14,6 +14,8 @@ class User
   ## associations ##
   
   embeds_many :projects
+  embeds_many :clients
+  embeds_many :uploads
   
   ## Attr Accessors ##
   

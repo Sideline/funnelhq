@@ -1,0 +1,4 @@
+%h1= @upload.title
+
+-if @upload.image?
+  %img{:src => @upload.file, :alt => @upload.title}

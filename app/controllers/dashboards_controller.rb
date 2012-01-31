@@ -3,7 +3,7 @@ class DashboardsController < ApplicationController
   respond_to :html
   
   def index
-    @projects = @user.projects.all
+    @projects = @user.projects.recent
     respond_with @projects
   end
 end
