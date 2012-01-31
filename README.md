@@ -10,8 +10,6 @@ Manage Projects, tasks, clients, files and client data easily.
 + Set up your database config in config/mongoid.yml
 + Install dependencies
 
-    bundle install
-
 ## Creating a test user
 
 Run the following rake command to generate a test user to login
