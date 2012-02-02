@@ -1,0 +1,6 @@
+@mixin transition($property: all, $duration: 0.5s, $function: ease-in-out) {
+  -moz-transition: $property $duration $function;
+  -o-transition: $property $duration $function;
+  -webkit-transition: $property $duration $function;
+  transition: $property $duration $function; }
+

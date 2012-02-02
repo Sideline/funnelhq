@@ -1,0 +1,11 @@
+/*
+Reset all columns to display as stacked elements i.e for mobile
+*/
+
+@mixin column_reset(){
+  @for $i from 1 through $columns {
+    .span-#{$i} {
+      display:block;width:100%;float:none;
+    }
+  }
+}

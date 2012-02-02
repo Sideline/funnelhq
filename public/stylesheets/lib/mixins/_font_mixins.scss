@@ -1,0 +1,9 @@
+// Converts pixels to em
+@mixin px-to-em($px, $base: 16){
+  font-size: #{$px/$base}em;
+}
+
+// Converts pixels to rem
+@mixin px-to-rem($px, $base: 16){
+  font-size: #{$px/$base}rem;
+}

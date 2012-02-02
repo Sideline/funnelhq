@@ -1,0 +1,28 @@
+/* Don't use native buttons on iOS */
+input[type=submit].button { -webkit-appearance: none; }
+
+@mixin button($color: #cccccc, $text_color: #333333, $width: 80px) {
+  @include border-radius(4px);
+  @include gradient(lighten($color, 10%), $color);
+  cursor: pointer;
+  font-weight: bold;
+  color: $text_color;
+  display: inline-block;
+  border: 1px solid darken($color, 5%);
+  text-align: center;
+  padding: 8px 12px 4px 12px;
+  min-height:26px;
+  line-height:26px;
+  @if $width {
+    min-width: $width; }
+  &:hover {
+    @include gradient(lighten($color, 5%), lighten($color, 10%)); } }
+
+.button, input.button {
+  @include button; }
+
+.button.main {
+  @include button(#049cdb, white); }
+
+.button.delete {
+  @include button(#9d261d, white); }

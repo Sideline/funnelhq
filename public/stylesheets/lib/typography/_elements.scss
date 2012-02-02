@@ -1,0 +1,14 @@
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,dl,input,textarea {
+  line-height: $baseline;
+  font-family: $sans;
+  color: $gray;
+  font-size: 14px;
+}
+
+p {
+  margin-bottom: $baseline;
+}
+
+img {
+  margin-bottom: 10px;
+}

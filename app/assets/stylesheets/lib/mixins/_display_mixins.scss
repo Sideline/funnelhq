@@ -1,0 +1,17 @@
+@mixin block{
+  clear:both;
+  margin:$baseline 0;
+  overflow:hidden;}
+
+// Legacy support for inline-block in IE7
+@mixin inline-block {
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: baseline;
+  zoom: 1;
+  *display: inline;
+  *vertical-align: auto;
+}
+
+@mixin clear {clear:both;}

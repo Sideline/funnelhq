@@ -1,0 +1,16 @@
+/* --------------------------------------------------
+:: Links
+-------------------------------------------------- */
+
+a {
+	color: $links;
+	text-decoration: none;
+	cursor: pointer;
+}
+a:hover {
+	color: $links-hover;
+}
+a:focus {
+	color: $links-focus;
+	outline: none;
+}

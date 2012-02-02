@@ -1,14 +1,14 @@
 !!!5
-%html{:class => "no-js", :lang => "en"}
+%html{:class => 'no-js', :lang => 'en'}
   %head
-    %meta{:charset => "utf-8"}
+    %meta{:charset => 'utf-8'}
     %title Ruby on Rails app
-    %script{:src => "http://html5shim.googlecode.com/svn/trunk/html5.js"}
+    %script{:src =>'http://html5shim.googlecode.com/svn/trunk/html5.js'}
+    
+    %link{:href =>'http://fonts.googleapis.com/css?family=Lato:400,700', :rel =>'stylesheet', :type =>'text/css'}
 
-    = stylesheet_link_tag    "application"
-    = javascript_include_tag "application"
-    %script{:type => "text/javascript", :src => "https://www.google.com/jsapi"}
-	
+    = stylesheet_link_tag    'application'
+    = javascript_include_tag 'application'	
     = csrf_meta_tags
 
   #nav
@@ -17,10 +17,20 @@
   %body
     #sidebar
       %ul
-        %li= link_to 'Projects', projects_path
-        %li= link_to 'Clients', clients_path
-        %li= link_to 'Uploads', uploads_path
-        %li= link_to 'Client sheets', clients_path
+        %li
+          =link_to 'Projects', projects_path
+          %span Update projects
+ 
+        %li
+          = link_to 'Clients', clients_path
+          %span Edit your clients
+
+        %li
+          = link_to 'Uploads', uploads_path
+          %span Uploads
+        %li
+          = link_to 'Client sheets', clients_path
+          %span Clients path
   
   #main
     - flash.each do |key, msg|

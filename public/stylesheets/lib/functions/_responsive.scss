@@ -1,0 +1,7 @@
+@function typo ($target, $context: $font-size ) {
+  @return ($target/$context)+em;
+}
+
+@function flex-width($target, $context: $width) {
+  @return ($target/$context)*100%
+}

@@ -1,0 +1,58 @@
+/*
+
+Mobile First Media Query Sheet.
+www.owainlewis.com
+
+*/
+
+@import "layout_mixins";
+
+/* ============================= */
+/* ! Layout for 320 Mobile. 4 Columns */
+/* ============================= */
+
+@media only screen
+and (min-width : 320px)
+and (max-width : 480px){
+	
+  @include column_reset;
+  .container{width:90%;}
+  img {max-width:320px;}
+	
+}
+
+/* iPhone 4 ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+/* Styles */
+}
+
+/* ============================= */
+/* ! Layout for 768. Tablets 10 columns */
+/* ============================= */
+
+@media only screen
+and (min-width : 480px)
+and (max-width : 1024px){
+
+  @include column_reset;
+  .container{width:90%;}
+	
+}
+
+/* ============================= */
+/* ! Layout for 1024 12 columns */
+/* ============================= */
+
+@media only screen and (min-width: 1024px) {
+	
+}
+
+/* ============================= */
+/* ! Layout for 1280 and above 16 columns */
+/* ============================= */
+
+@media only screen and (min-width: 1280px) {
+	
+}

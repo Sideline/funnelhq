@@ -1,0 +1,41 @@
+/* --------------------------------------------------------------
+ * Gravity CSS
+ * Developed by: Owain Lewis
+ * www.owainlewis.com
+ * License: MIT
+ * http://www.opensource.org/licenses/mit-license.php
+ *-------------------------------------------------------------- */
+
+//Base Modules
+
+@import "settings";
+@import "reset";
+
+//Mixins
+
+@import "mixins/mixins";
+
+//Typography
+
+@import "typography/elements";
+@import "typography/lists";
+@import "typography/misc_elements";
+@import "typography/links";
+@import "typography/headings";
+
+//Layout
+
+@import "layout/grid_responsive"; 
+
+//The files below are helpers that can be removed if not required
+
+//Forms
+@import "helpers/forms";
+
+//Tables
+@import "helpers/tables";
+
+//Misc
+@import "helpers/buttons";
+@import "helpers/classes";
+@import "helpers/flash_messages"; //For rails applications

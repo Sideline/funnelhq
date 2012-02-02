@@ -1,0 +1,7 @@
+@mixin fontFace($name, $src: fonts) {
+  @font-face {
+    font-family: "FontName";
+    src: url("$src/$name.eot");
+    src: url("$src/$name.eot?iefix") format("eot"), url("$src/$name.woff") format("woff"), url("$src/$name.ttf") format("truetype"), url("$src/$name.svg#webfontZam02nTh") format("svg");
+    font-weight: normal;
+    font-style: normal; } }

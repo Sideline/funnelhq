@@ -1,0 +1,86 @@
+/*
+Useful defaults
+*/
+
+::selection {}
+::-moz-selection {}
+
+img::selection {
+	background: transparent;
+}
+img::-moz-selection {
+  background: transparent;
+}
+
+body {
+  -webkit-tap-highlight-color: rgba(255,0,0, 0.62);
+}
+
+/* Misc Element Styles */
+
+abbr, acronym {
+  border-bottom: 1px dotted black;
+}
+
+address {
+  font-style: italic;
+}
+
+del {
+  color: black;
+}
+
+blockquote {
+  display: block;
+  font-weight: bold;
+  border-left: 4px solid #eeeeee;
+  padding: ($baseline/2) $baseline/2;
+  font-weight: bold;
+  font-size: 30px;
+  font-size:3.0rem;
+  font-family: serif;
+  font-style: italic;
+  color: $gray;
+  line-height: 1.35;
+  margin: $baseline 0;
+}
+
+pre, code {
+  margin: 10px 0;
+  white-space: pre;
+}
+
+pre, code, tt {
+  font: $mono;
+  line-height: 1.5;
+  padding: 0 3px 2px;
+  background: #FFFFEE;
+}
+
+q {
+  font-style: italic;
+  font-weight: bold;
+  font-family: $serif;
+}
+
+cite {
+	display: block;
+	font-weight: bold;
+}
+
+figcaption {
+	display: block;
+	font-weight: bold;
+	font-style: italic;
+}
+
+small {
+  font-size: $font-size - 2;
+  font-family:$sans;
+}
+
+strong {
+  font-weight: bold;
+}
+
+hr {height:5px;}
