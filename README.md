@@ -4,6 +4,10 @@ FreelanceDeck is An open source project management tool for freelancers built wi
 
 Manage Projects, tasks, clients, files and client data easily.
 
+This projects is very much in the early stages and nowhere near complete but a live version is running at http://freelancedeck.herokuapp.com
+
+You can login with email: admin@test.com and pw: password
+
 ## Install
 
 + Install MongoDB
