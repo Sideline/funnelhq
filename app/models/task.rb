@@ -15,4 +15,14 @@ class Task
   field :title, :type => String
   field :complete, :type => Boolean, :default => false
   
+  ## methods ##
+  
+  class << self
+    
+  end
+  
+  def complete?
+    self.complete 
+  end
+  
 end
