@@ -140,7 +140,7 @@ input[type="week"] {
   padding: $formPadding;
   outline: none;
   @include border-radius(2px);
-  font: 12px $sans;
+  font: 14px $sans;
   margin: 0 0 18px 0;
   width: 100%;
   display: block;
@@ -196,13 +196,7 @@ optgroup {
 }
 
 button[type=submit], input[type='submit'] {
-  padding: 10px 12px 7px 12px;
-  text-align: center;
-  font-weight: bold;
-  @include border-radius(5px);
-  @include gradient;
-  border: 0;
-  color: white;
+  @include button;
 }
 
 .input-list {

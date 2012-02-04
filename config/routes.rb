@@ -18,6 +18,7 @@ Baseapp::Application.routes.draw do
   resources :issues
   resources :uploads
   resources :clients
+  resources :tasks
   
   match '/uploads/share/:id', :to => 'uploads#share' 
      

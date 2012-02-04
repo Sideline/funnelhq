@@ -9,13 +9,14 @@
     = csrf_meta_tags
   
   %body
+    #home_nav 
+      %ul
+        %li= link_to('Login', new_user_session_path) 
 
-  #home.container
+    #home.container
+    
+      = stylesheet_link_tag    "application"
+      = javascript_include_tag "application"
+      = csrf_meta_tags
 
-    = link_to('Login', new_user_session_path) 
-
-    = stylesheet_link_tag    "application"
-    = javascript_include_tag "application"
-    = csrf_meta_tags
-
-    =yield
+      =yield

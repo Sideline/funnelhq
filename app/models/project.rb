@@ -2,7 +2,7 @@ class Project
   
   include Core::Mongoid::Document
   
-  TYPES = %w(admin internal client personal).map {|type| type.upcase}
+  TYPES = %w(admin internal client personal).map {|type| type.camelize}
 
   ## fields ##
   
@@ -22,7 +22,7 @@ class Project
   
   ## scopes ##
   
-  scope :recent, order_by(:created_at => :desc).limit(5)
+  scope :recent, order_by(:created_at => :desc).limit(3)
   scope :active, :where => {:project_active => true}
   scope :closed, :where => {:project_active => false}
   
@@ -30,6 +30,10 @@ class Project
   
   def active?
     self.project_active
+  end
+  
+  def active_yes_no?
+    active? ? "Yes" : "No"
   end
     
 end

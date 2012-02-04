@@ -1,7 +1,7 @@
 /* Don't use native buttons on iOS */
 input[type=submit].button { -webkit-appearance: none; }
 
-@mixin button($color: #cccccc, $text_color: #333333, $width: 80px) {
+@mixin button($color: #2c8dca, $text_color: #fff, $width: 80px) {
   @include border-radius(4px);
   @include gradient(lighten($color, 10%), $color);
   cursor: pointer;
@@ -10,13 +10,13 @@ input[type=submit].button { -webkit-appearance: none; }
   display: inline-block;
   border: 1px solid darken($color, 5%);
   text-align: center;
-  padding: 8px 12px 4px 12px;
+  padding: 5px 16px 5px;
   min-height:26px;
   line-height:26px;
   @if $width {
     min-width: $width; }
   &:hover {
-    @include gradient(lighten($color, 5%), lighten($color, 10%)); } }
+    @include gradient(lighten($color, 5%), lighten($color, 10%));color:$text_color; } }
 
 .button, input.button {
   @include button; }

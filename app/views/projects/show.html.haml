@@ -1,5 +1,6 @@
 %h1= @project.title
 %p= @project.description
+%p== Project active: #{@project.active_yes_no?}
 %p== Project type: #{@project.project_type}
 
 = link_to 'Edit', edit_project_path(@project)

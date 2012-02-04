@@ -3,20 +3,11 @@
 - if current_user.first_login?
   = render 'first_login'
 -else
-  = render 'shared/stats'
-  %h2 Recent activity
-  - @projects.each do |project|
-    %div.update== #{@user.first_name} created the project #{project.title} on #{pretty_date project.created_at}
+  = render 'stats'
+  = render 'updates'
 
 
-.update.blue
-  %p This is an update
 
-.update.red
-  %p This is an update
-
-.update.green
-  %p This is an update
 
 
 

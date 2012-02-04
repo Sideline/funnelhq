@@ -30,12 +30,12 @@
 //The files below are helpers that can be removed if not required
 
 //Forms
+@import "helpers/buttons";
 @import "helpers/forms";
 
 //Tables
 @import "helpers/tables";
 
 //Misc
-@import "helpers/buttons";
 @import "helpers/classes";
 @import "helpers/flash_messages"; //For rails applications
