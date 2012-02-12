@@ -14,7 +14,19 @@
 
 -----------------------------------*/
 
-body{background:#f7f7f3;}
+// Used by Spine to hide and show elements
+.stack > *:not(.active) {
+  display: none;
+}
+
+html{background:#D9DFE4;}
+body {
+  min-height: 100%;
+  overflow-y: scroll;
+  -webkit-font-smoothing: antialiased;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0)));
+  background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0)); }
 
 .container {
   max-width: 978px;
@@ -42,7 +54,7 @@ body{background:#f7f7f3;}
 	li span {display:block;color:#999;font-style:italic;margin-left:20px;}
 }
 
-#main {width:70%;margin-left:260px;}
+#main {width:70%;margin-left:260px;overflow:auto;background:#fff;padding:20px;}
 
 .update {background:#eee;min-height:100px;padding:20px 10px;margin-bottom:10px;overflow:hidden;border-top:10px solid #5A5F64;}
 .blue{border-top:10px solid #6499a3;}
@@ -69,8 +81,8 @@ body{background:#f7f7f3;}
 }
 
 #devise #login {
-  width:640px;
-  margin:40px auto 0 auto;
+  width:440px;
+  margin:0 auto;
   background:#fff;
   border:1px solid #ccc;
   padding:20px;}

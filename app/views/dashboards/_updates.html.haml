@@ -1,4 +1,6 @@
 %h2 Recent activity
 
 - @projects.each do |project|
-  %div.update== #{@user.full_name} created the project #{project.title} on #{pretty_date project.created_at}
+  %div.update
+    %p== #{@user.full_name} created the project #{project.title}
+    %p== #{pretty_date project.created_at}

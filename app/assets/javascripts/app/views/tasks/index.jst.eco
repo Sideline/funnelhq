@@ -1,0 +1,12 @@
+<h1>Listing Tasks</h1>
+
+<% for task in @tasks: %>
+  <div class="item" data-id="<%= task.id %>">
+    <a data-type="show"><%= task.title %></a>
+    
+    <a data-type="edit">Edit</a> 
+    <a data-type="destroy">Destroy</a>
+  </div>
+<% end %>
+
+<p><a data-type="new">New Task</a></p>

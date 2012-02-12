@@ -8,11 +8,22 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+# Javascript and Spine
 gem 'jquery-rails'
+gem 'spine-rails'
+gem 'eco'
+
+# Mongoid
 gem "bson_ext", ">= 1.3.1"
 gem "mongoid", ">= 2.3.3"
+
+# Use haml instead of ERB
 gem "haml-rails"
+
+# Devise for authentication
 gem "devise"
+
+# File uploads with paperclip
 gem "mongoid-paperclip", :require => "mongoid_paperclip"
 
 # Pagination for Rails 3

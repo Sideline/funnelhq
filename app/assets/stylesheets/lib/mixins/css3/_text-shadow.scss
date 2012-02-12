@@ -1,2 +1,2 @@
-@mixin textShadow($x-axis: 1px, $y-axis: 1px, $casting: 1px, $color: white) {
+@mixin text-shadow($x-axis: 0, $y-axis: 1px, $casting: 0, $color: white) {
   text-shadow: $x-axis $y-axis $casting $color; }
