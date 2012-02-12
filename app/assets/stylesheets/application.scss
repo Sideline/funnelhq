@@ -23,6 +23,7 @@ html{background:#D9DFE4;}
 body {
   min-height: 100%;
   overflow-y: scroll;
+  background:#D9DFE4;
   -webkit-font-smoothing: antialiased;
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0)));
   background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
@@ -42,19 +43,20 @@ body {
 
 #sidebar {
   width:220px;
-  border-right:20px solid #555;
+  border-right:10px solid #555;
   background:$sidebar;
-  margin-right:20px;
+  margin:40px 20px 0 0;
   position:absolute;
   top:0;
   height:100%;
 
-  li {list-style:none;border-bottom:1px solid darken(#5A5F64, 5%);padding:20px 0;}
+  li {list-style:none;border-bottom:1px solid darken(#5A5F64, 5%);padding:20px 0;cursor:pointer}
+  li:hover, li.active {background: darken(#5A5F64, 3%);}
 	a {color:#fff;margin-left:20px;padding-top:10px;text-transform:uppercase;}
 	li span {display:block;color:#999;font-style:italic;margin-left:20px;}
 }
 
-#main {width:70%;margin-left:260px;overflow:auto;background:#fff;padding:20px;}
+#main {width:70%;margin-left:260px;overflow:auto;background:#fff;padding:40px 20px;}
 
 .update {background:#eee;min-height:100px;padding:20px 10px;margin-bottom:10px;overflow:hidden;border-top:10px solid #5A5F64;}
 .blue{border-top:10px solid #6499a3;}

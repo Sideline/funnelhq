@@ -20,12 +20,13 @@ class User
   
   ## Attr Accessors ##
   
-  attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me
+  attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me, :avatar_url
   
   ## fields ##
   
   field :first_name
   field :last_name
+  field :avatar_url
   field :role, :default => 'admin'
   
   class << self

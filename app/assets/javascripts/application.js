@@ -9,4 +9,15 @@
 //= require app
 //= require_tree .
 
+jQuery(function(){
+  $('#sidebar li').click(function(){
+	  var idx;
+	  idx = $('#sidebar li').index(this);
+	  window.location = $('#sidebar a').eq(idx).attr('href');
+  });
+});
+
+
+
+
 

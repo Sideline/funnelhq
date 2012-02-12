@@ -1,11 +1,11 @@
 #user_stats
   %li
     = current_user.projects.size
-    %span Projects
+    %span= stats_plural "projects"
   %li
     = current_user.clients.size
-    %span Clients
+    %span= stats_plural "clients"
   %li
     = current_user.tasks.size
-    %span Open Tasks
+    %span= stats_plural "tasks"
     
