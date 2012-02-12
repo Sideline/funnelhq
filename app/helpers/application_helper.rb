@@ -7,7 +7,8 @@ module ApplicationHelper
   
   # Returns a gravatar url
   def avatar_url(user)
-    image_tag("http://www.gravatar.com/avatar/#{Digest::MD5::hexdigest(user.email)}?d=mm", :alt => 'Avatar', :class => 'avatar')
+    url = "http://www.gravatar.com/avatar/#{Digest::MD5::hexdigest(user.email)}?d=mm"
+    image_tag(url, :alt => 'Avatar', :class => 'avatar')
   end
   
 end
