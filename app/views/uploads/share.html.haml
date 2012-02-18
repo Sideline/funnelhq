@@ -2,3 +2,6 @@
 
 -if @upload.image?
   %img{:src => @upload.file, :alt => @upload.title}
+- else
+
+  =link_to 'Download file', @upload.download_path

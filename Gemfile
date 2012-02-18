@@ -14,25 +14,25 @@ gem 'spine-rails'
 gem 'eco'
 
 # Mongoid
-gem "bson_ext", ">= 1.3.1"
-gem "mongoid", ">= 2.3.3"
+gem 'bson_ext', '>= 1.3.1'
+gem 'mongoid', '>= 2.3.3'
 
 # Use haml instead of ERB
-gem "haml-rails"
+gem 'haml-rails'
 
 # Devise for authentication
-gem "devise"
+gem 'devise'
 
 # File uploads with paperclip
-gem "mongoid-paperclip", :require => "mongoid_paperclip"
+gem 'mongoid-paperclip', :require => 'mongoid_paperclip'
 
 # Pagination for Rails 3
 #gem 'kaminari'
 
 group :development, :test do
-  gem "rspec-rails", ">= 2.8.0.rc1"
-  gem "mongoid-rspec"
-  gem "factory_girl_rails"
+  gem 'rspec-rails', '>= 2.8.0.rc1'
+  gem 'mongoid-rspec'
+  gem 'factory_girl_rails'
 end
 
 

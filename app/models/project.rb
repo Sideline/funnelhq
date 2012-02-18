@@ -2,7 +2,7 @@ class Project
   
   include Core::Mongoid::Document
   
-  TYPES = %w(admin internal client personal).map {|type| type.camelize}
+  TYPES = %w(admin internal client personal software design).map {|type| type.camelize}
 
   ## fields ##
   

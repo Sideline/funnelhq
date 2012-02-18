@@ -8,6 +8,7 @@ class Upload
   ## Validation ##
   
   validates_presence_of :title
+  validates_attachment_presence :file
   
   ## associations ##
   
@@ -27,6 +28,11 @@ class Upload
 
   def is_public?
     self.is_public
+  end
+  
+  # Returns the full path to a download so that it can be shared
+  def download_path upload
+    "/files/#{upload}"
   end
   
 end
