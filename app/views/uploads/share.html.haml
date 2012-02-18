@@ -1,5 +1,8 @@
 %h1= @upload.title
 
+%p== #{@user.name} wants to share a file with you
+
+
 -if @upload.image?
   %img{:src => @upload.file, :alt => @upload.title}
 - else

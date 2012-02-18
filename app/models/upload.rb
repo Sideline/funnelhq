@@ -3,7 +3,7 @@ class Upload
   include Core::Mongoid::Document
   include Mongoid::Paperclip
   
-  CATEGORY = %w(document, contract, file).map {|type| type.camelize}
+  CATEGORY = %w(document design contract file).map {|type| type.camelize}.sort
 
   has_mongoid_attached_file :file
   

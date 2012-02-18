@@ -1,9 +1,10 @@
-%p#notice= notice
+%h1= @client.name
 
-%h1= @client.first_name
-%p= @client.last_name
-%p= @client.email
-%p= @client.telephone
+= avatar_url(@client)
+
+%ul
+  %li== Email: #{@client.email}
+  %li== Phone: #{@client.telephone}
 
 = link_to 'Edit', edit_client_path(@client)
 \|

@@ -1,7 +1,7 @@
 /* Don't use native buttons on iOS */
 input[type=submit].button { -webkit-appearance: none; }
 
-@mixin button($color: #2c8dca, $text_color: #fff, $width: 80px) {
+@mixin button($color: #2c2a34, $text_color: #fff, $width: 80px) {
   @include border-radius(4px);
   @include gradient(lighten($color, 10%), $color);
   cursor: pointer;

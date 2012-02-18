@@ -60,6 +60,8 @@ class User
   def full_name
     "#{self.first_name} #{self.last_name}"
   end
+  
+  alias_method :name, :full_name # I always type user.name instead of user.full_name
 
   def admin?
     self.role.downcase == "admin"

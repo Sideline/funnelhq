@@ -11,16 +11,12 @@
     = f.text_field :title
 
   .field
-    = f.label :project_active
-    = f.check_box :project_active
-
-  .field
     = f.label :project_type
     = f.select :project_type, Project::TYPES
 
   .field
     = f.label :description
-    = f.text_area :description
+    = f.text_field :description
 
   .actions
     = f.submit 'Save'

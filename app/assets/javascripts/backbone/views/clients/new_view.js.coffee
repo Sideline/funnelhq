@@ -1,10 +1,10 @@
-Baseapp.Views.Tasks ||= {}
+Baseapp.Views.Clients ||= {}
 
-class Baseapp.Views.Tasks.NewView extends Backbone.View
-  template: JST["backbone/templates/tasks/new"]
+class Baseapp.Views.Clients.NewView extends Backbone.View
+  template: JST["backbone/templates/clients/new"]
 
   events:
-    "submit #new-task": "save"
+    "submit #new-client": "save"
 
   constructor: (options) ->
     super(options)
@@ -21,11 +21,11 @@ class Baseapp.Views.Tasks.NewView extends Backbone.View
     @model.unset("errors")
 
     @collection.create(@model,
-      success: (task) =>
-        @model = task
+      success: (client) =>
+        @model = client
         window.location.hash = "/#{@model.id}"
 
-      error: (task, jqXHR) =>
+      error: (client, jqXHR) =>
         @model.set({errors: $.parseJSON(jqXHR.responseText)})
     )
 

@@ -1,13 +1,13 @@
 %h2= @upload.title
 %p= @upload.category
 
+%p=link_to 'Download', @upload.file.to_s
+
 - if @upload.is_public?
   %p Copy the URL below to share your file with others.
   %pre
     %code
       ="#{root_url}uploads/#{@user.id}/share/#{@upload.id}"
-
-  %p=link_to 'Public URL', "#{@user.id}/share/#{@upload.id}"
 
 - if @upload.image?
   %img{:src => @upload.file, :alt => @upload.title}
