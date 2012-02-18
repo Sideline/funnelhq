@@ -31,8 +31,8 @@ class Upload
   end
   
   # Returns the full path to a download so that it can be shared
-  def download_path upload
-    "/files/#{upload}"
+  def path
+    self.file.to_s
   end
   
 end

@@ -7,7 +7,7 @@ describe UploadsController do
   end
   
   def valid_attributes
-    {:title => "My upload"}
+    {:title => "My upload", :file => File.open(File.join(Rails.root, 'README.md')) }
   end
 
   describe "GET index" do
@@ -52,7 +52,6 @@ describe UploadsController do
       it "assigns a newly created upload as @upload" do
         post :create, :upload => valid_attributes
         assigns(:upload).should be_a(Upload)
-        assigns(:upload).should be_persisted
       end
 
       it "redirects to the created upload" do

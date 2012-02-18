@@ -5,11 +5,9 @@ ol, ul, dl {
 ol {
   margin-bottom: $baseline;
   margin-left: $baseline;
-
   ol {
     margin-bottom: 0;
   }
-
 }
 
 ul {
@@ -20,9 +18,7 @@ ul {
     ul {
       margin-bottom: $baseline / 2;
     }
-
   }
-
 }
 
 ul.unstyled {
@@ -30,20 +26,16 @@ ul.unstyled {
   li {
     margin-left: 0;
   }
-
 }
 
 
 dl {
   margin-bottom: $baseline;
-
   dt {
     font-weight: bold;
     margin-bottom:5px;
   }
-
   dd {
     margin-bottom: 0;
   }
-
 }

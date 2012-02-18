@@ -20,7 +20,7 @@ Baseapp::Application.routes.draw do
   resources :clients
   resources :tasks
   
-  match '/uploads/share/:id', :to => 'uploads#share' 
+  match 'uploads/:user_id/share/:id', :to => 'uploads#share' 
      
   # Default route
   

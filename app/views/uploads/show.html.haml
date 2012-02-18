@@ -3,7 +3,12 @@
 %p=@upload.file_content_type
 
 - if @upload.is_public?
-  %p== Public URL /uploads/share/#{@upload.id}
+  %p Copy the URL below to share your file with others.
+  %pre
+    %code
+      ="#{root_url}uploads/#{@user.id}/share/#{@upload.id}"
+
+  %p=link_to 'Public URL', "#{@user.id}/share/#{@upload.id}"
 
 - if @upload.image?
   %img{:src => @upload.file, :alt => @upload.title}

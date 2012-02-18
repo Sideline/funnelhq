@@ -4,7 +4,7 @@ class UploadsController < ApplicationController
   
   skip_before_filter :authenticate_user!, :only => [:share]
   
-  before_filter :find_upload, :only => [:show, :edit, :update, :destroy, :share]
+  before_filter :find_upload, :only => [:show, :edit, :update, :destroy]
   
   def index
     @uploads = @user.uploads.all
@@ -60,6 +60,8 @@ class UploadsController < ApplicationController
   # Share an upload with an external user
   
   def share
+    @user = User.find(params[:user_id])
+    @upload = @user.uploads.find(params[:id])
     render :layout => 'share'
   end
   

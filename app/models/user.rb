@@ -22,22 +22,10 @@ class User
   field :current_sign_in_ip, :type => String
   field :last_sign_in_ip,    :type => String
 
-  ## Encryptable
-  # field :password_salt, :type => String
-
-  ## Confirmable
-  # field :confirmation_token,   :type => String
-  # field :confirmed_at,         :type => Time
-  # field :confirmation_sent_at, :type => Time
-  # field :unconfirmed_email,    :type => String # Only if using reconfirmable
-
-  ## Lockable
-  # field :failed_attempts, :type => Integer # Only if lock strategy is :failed_attempts
-  # field :unlock_token,    :type => String # Only if unlock strategy is :email or :both
-  # field :locked_at,       :type => Time
-
-  # Token authenticatable
-  # field :authentication_token, :type => String
+  field :first_name
+  field :last_name
+  field :avatar_url
+  field :role, :default => 'admin'
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
     
@@ -56,13 +44,6 @@ class User
   ## Attr Accessors ##
   
   attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me, :avatar_url
-  
-  ## fields ##
-  
-  field :first_name
-  field :last_name
-  field :avatar_url
-  field :role, :default => 'admin'
   
   class << self
     
