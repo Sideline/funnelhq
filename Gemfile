@@ -8,10 +8,9 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-# Javascript and Spine
+# Javascript and Backbone
 gem 'jquery-rails'
-gem 'spine-rails'
-gem 'eco'
+gem "rails-backbone"
 
 # Mongoid
 gem 'bson_ext', '>= 1.3.1'

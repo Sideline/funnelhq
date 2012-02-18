@@ -2,6 +2,8 @@ class Upload
   
   include Core::Mongoid::Document
   include Mongoid::Paperclip
+  
+  CATEGORY = %w(document, contract, file).map {|type| type.camelize}
 
   has_mongoid_attached_file :file
   

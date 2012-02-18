@@ -9,8 +9,13 @@
   .field
     = f.label :title
     = f.text_field :title
+
   .field
-    = f.label "make_public"
+    = f.label :category
+    = f.select :category, Upload::CATEGORY
+
+  .field
+    = f.label "Make_public"
     = f.check_box :is_public
 
   .field

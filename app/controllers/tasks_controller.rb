@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   
-  respond_to :html
+  respond_to :html, :json
   
   before_filter :find_task, :only => [:show, :edit, :update, :destroy]
   
