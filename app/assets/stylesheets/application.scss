@@ -20,6 +20,7 @@
 }
 
 html{background:#D9DFE4;}
+
 body {
   min-height: 100%;
   overflow-y: scroll;
@@ -71,6 +72,8 @@ body {
   h2 {font-size:18px;color:#3d334a;}
 }
 
+#errors {margin:20px 0;color:#770000;}
+
 #user_stats{
   margin:40px 0;
   li {
@@ -85,12 +88,16 @@ body {
   }
 }
 
-#devise #login {
+#login {
   width:440px;
   margin:0 auto;
   background:#fff;
   border:1px solid #ccc;
-  padding:20px;}
+  padding:20px;
+
+  #error_explanation h2 {font-size:14px};
+
+}
 
 #home_nav{
   width: 100%;

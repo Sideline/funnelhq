@@ -20,6 +20,8 @@ class Client
   
   embedded_in :user, :inverse_of => :clients
   
+  embeds_many :invoices
+  
   ## Methods ##
   
   class << self

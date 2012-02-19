@@ -1,5 +1,13 @@
 Baseapp::Application.routes.draw do
   
+  get "invoices/index"
+
+  get "invoices/new"
+
+  get "invoices/edit"
+
+  get "invoices/show"
+
   get "pages/index"
   
   devise_for :users, :path_names => { :sign_in => 'login', :sign_up => 'new', :sign_out => 'logout', :password => 'password', :confirmation => 'confirmation' }
@@ -19,6 +27,7 @@ Baseapp::Application.routes.draw do
   resources :uploads
   resources :clients
   resources :tasks
+  resources :invoices
   
   match 'uploads/:user_id/share/:id', :to => 'uploads#share' 
      

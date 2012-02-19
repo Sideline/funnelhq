@@ -1,3 +1,5 @@
+require "digest/sha1"
+
 class User
   
   include Core::Mongoid::Document
@@ -22,10 +24,11 @@ class User
   field :current_sign_in_ip, :type => String
   field :last_sign_in_ip,    :type => String
 
-  field :first_name
-  field :last_name
-  field :avatar_url
-  field :role, :default => 'admin'
+  field :first_name, :type => String
+  field :last_name, :type => String
+  field :avatar_url, :type => String
+  field :role, :type => String, :default => 'admin'
+  field :api_key, :type => String
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
     
@@ -40,10 +43,13 @@ class User
   embeds_many :clients
   embeds_many :uploads
   embeds_many :tasks
+  embeds_many :invoices
   
   ## Attr Accessors ##
   
   attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me, :avatar_url
+  
+  before_save :generate_api_key
   
   class << self
     
@@ -56,7 +62,7 @@ class User
   def recent_projects
     self.projects.criteria.and(:updated_at.gt => 2.weeks.ago)
   end
-  
+   
   def full_name
     "#{self.first_name} #{self.last_name}"
   end
@@ -68,7 +74,13 @@ class User
   end
   
   def first_login?
-    self.sign_in_count == 1
+    self.sign_in_count == 1 && self.projects.count == 0 && self.clients.count == 0 && self.tasks.count == 0 && self.tasks.count == 0
+  end
+  
+  # Generate a unique api key for this user
+  def generate_api_key
+    key = Digest::SHA1.hexdigest(Time.now.to_s + rand(12345678).to_s)[1..10]
+    self.api_key = self._id.to_s + key
   end
     
 end
