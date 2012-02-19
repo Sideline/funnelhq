@@ -9,7 +9,7 @@
  
   - @invoices.each do |invoice|
     %tr
-      %td= invoice.client_name
+      %td= link_to current_user.clients.find(invoice.client_id).name, invoice
       %td
       %td
       %td

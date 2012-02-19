@@ -1,2 +1,22 @@
-%h1 Invoices#show
-%p Find me in app/views/invoices/show.html.haml
+%h1 Invoice
+
+%p Invoice Date:
+%p Payment Due: 
+
+%p== To: #{@client.name}
+%p== From: #{@user.name} 
+
+%table#invoice
+  %tr
+    %th Qty
+    %th Description
+    %th Price
+    %th Total
+
+  - @invoice.line_items.each do |line_item|
+ 
+    %tr
+      %td= line_item.qty
+      %td= line_item.description
+      %td= line_item.price
+      %td= (line_item.qty * line_item.price)

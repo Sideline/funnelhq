@@ -11,5 +11,16 @@
     = f.label :client_id
     = f.select :client_id, @clients
 
+    = f.fields_for :line_items do |builder|
+
+      = builder.label :qty
+      = builder.text_field :qty
+
+      = builder.label :description
+      = builder.text_field :description
+
+      = builder.label :price
+      = builder.text_field :price
+
   .actions
     = f.submit 'Save'

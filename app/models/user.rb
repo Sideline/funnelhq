@@ -74,8 +74,7 @@ class User
   end
   
   def first_login?
-    self.sign_in_count == 1 && self.projects.count == 0
-    && self.clients.count == 0 && self.tasks.count == 0 && self.tasks.count == 0
+    self.sign_in_count == 1 && self.projects.count == 0 && self.clients.count == 0 && self.tasks.count == 0
   end
   
   # Generate a unique api key for this user
