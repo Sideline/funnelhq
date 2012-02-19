@@ -33,6 +33,6 @@ Baseapp::Application.routes.draw do
      
   # Default route
   
-  root :to => 'pages#index'
+  root :to => redirect("/users/login")
 
 end

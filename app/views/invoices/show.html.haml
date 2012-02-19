@@ -19,4 +19,4 @@
       %td= line_item.qty
       %td= line_item.description
       %td= line_item.price
-      %td= (line_item.qty * line_item.price)
+      %td= (line_item.qty.to_f * line_item.price.to_f)
