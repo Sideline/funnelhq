@@ -1,0 +1,18 @@
+%h1 Invoices
+
+%table
+  %tr
+    %th Client
+    %th Amount
+    %th Date
+    %th Paid?
+ 
+  - @invoices.each do |invoice|
+    %tr
+      %td= invoice.client_name
+      %td
+      %td
+      %td
+
+= link_to 'New invoice', new_invoice_path, :class => 'button'
+   
