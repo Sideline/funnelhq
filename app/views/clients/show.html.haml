@@ -2,9 +2,8 @@
 
 = avatar_url(@client)
 
-%ul
-  %li== Email: #{@client.email}
-  %li== Phone: #{@client.telephone}
+%p== Email: #{@client.email}
+%p== Phone: #{@client.telephone}
 
 = link_to 'Edit', edit_client_path(@client)
 \|

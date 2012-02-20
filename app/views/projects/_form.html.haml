@@ -1,4 +1,5 @@
-= form_for @project, :html => { :multipart => true } do |f|
+= form_for @project do |f|
+
   -if @project.errors.any?
     #error_explanation
       %h2= "#{pluralize(@project.errors.count, "error")} prohibited this project from being saved:"
@@ -12,7 +13,11 @@
 
   .field
     = f.label :project_type
-    = f.select :project_type, Project::TYPES
+    = f.select :project_type, Project::TYPES.unshift("N/A")
+   
+  .field
+    = f.label 'Client'
+    = f.select :client_id, current_user.clients.collect{ |c| [c.name, c.id] }.unshift(["N/A", ""])
 
   .field
     = f.label :description

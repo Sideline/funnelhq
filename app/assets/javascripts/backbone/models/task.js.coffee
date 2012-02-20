@@ -1,4 +1,5 @@
 class Baseapp.Models.Task extends Backbone.Model
+
   paramRoot: 'task'
 
   defaults:

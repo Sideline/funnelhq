@@ -1,10 +1,20 @@
 %h1= @project.title
 %p= @project.description
-
+%p= link_to 'Edit', edit_project_path(@project)
 %ul.project_meta
-  %li== Active: #{@project.active_yes_no?}
-  %li== Type: #{@project.project_type}
+  %li== Active : #{@project.active_yes_no?}
+  %li== Type : #{@project.project_type}
+  %li== Client : #{find_client}
 
-= link_to 'Edit', edit_project_path(@project)
-\|
-= link_to 'Back', projects_path
+= render 'stats'
+
+%h3 Collaborators
+
+= avatar_url(current_user)
+
+%h3 Recent Messages
+
+.message
+  %p Owain can you deploy the project today? I just need to make sure the client gets it by tomorrow.
+
+

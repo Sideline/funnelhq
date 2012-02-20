@@ -10,6 +10,7 @@ class Project
   field :project_type, :type => String, :default => "None"
   field :description, :type => String
   field :project_active, :type => Boolean, :default => :true
+  field :client_id, :type => Integer
   
   ## validations ##
   

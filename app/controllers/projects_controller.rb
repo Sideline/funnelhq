@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   
   respond_to :html
+  
   before_filter :find_project, :only => [:edit, :update, :destroy]
 
   def index
@@ -26,8 +27,10 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.save
+        puts "Tried to save mongo"
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
       else
+        puts @project.errors.full_messages.inspect
         format.html { render action: "new" }
       end
     end

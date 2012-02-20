@@ -1,6 +1,7 @@
 Baseapp.Views.Tasks ||= {}
 
 class Baseapp.Views.Tasks.NewView extends Backbone.View
+
   template: JST["backbone/templates/tasks/new"]
 
   events:
@@ -20,7 +21,7 @@ class Baseapp.Views.Tasks.NewView extends Backbone.View
 
     @model.unset("errors")
 
-    @collection.create(@model,
+    @collection.create(@model.toJSON(),
       success: (task) =>
         @model = task
         window.location.hash = "/#{@model.id}"
