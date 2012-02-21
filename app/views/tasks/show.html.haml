@@ -1,0 +1,8 @@
+%p#notice= notice
+
+%h2= @task.title
+%p
+  %b Complete:
+  = @task.complete
+
+= link_to 'Back', tasks_path

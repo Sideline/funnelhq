@@ -6,31 +6,35 @@ describe InvoicesController do
     login_user
   end
   
+  def valid_attributes
+    { }
+  end
+  
   describe "GET 'index'" do
     it "returns http success" do
-      get 'index'
+      get :index
       response.should be_success
     end
   end
 
   describe "GET 'new'" do
     it "returns http success" do
-      get 'new'
+      get :new
       response.should be_success
     end
   end
 
   describe "GET 'edit'" do
     it "returns http success" do
-      get 'edit'
+      invoice = @user.invoices.create! valid_attributes
+      get :edit, :id => invoice.id
+      assigns(:invoice).should eq(invoice)
       response.should be_success
     end
   end
 
   describe "GET 'show'" do
     it "returns http success" do
-      get 'show'
-      response.should be_success
     end
   end
 

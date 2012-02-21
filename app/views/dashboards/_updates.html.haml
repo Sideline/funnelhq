@@ -2,5 +2,6 @@
 
 - @projects.each do |project|
   %div.update
-    %p== #{@user.full_name} created #{project.title}
+    %h3 New Project
+    %p== #{@user.full_name} created the project #{project.title}
     %p== #{time_ago_in_words project.created_at} ago

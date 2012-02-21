@@ -63,7 +63,7 @@ body {
 #sidebar {
   width: 220px;
   border-right: 2px solid darken(#eee, 10%);
-  background: lighten(#e1e9ef,4%);
+  background: $blue2;
   margin: 40px 20px 0 0;
   position: absolute;
   top: 0px;
@@ -71,7 +71,7 @@ body {
 
   li {
     list-style: none;
-    border-bottom: 1px solid darken(#e1e9ef, 5%); 
+    border-bottom: 1px solid darken($blue2, 5%); 
     padding: 20px 0;
     cursor: pointer
   }
@@ -80,7 +80,7 @@ body {
     a{color:#FFF};
   }
   a {
-    color: #333;
+    color: #fff;
     margin-left: 20px;
     padding-top: 10px;
     text-transform: uppercase;
@@ -97,6 +97,7 @@ body {
   width: 70%;
   margin-left: 260px;
   overflow: auto;
+  min-height:500px;
   background: #fff;
   border:1px solid $borders;
   padding: 20px;@include border-radius(5px)
@@ -187,6 +188,6 @@ body {
   }
 }
 
-.alert {margin:40px 0;}
-
+#api_key {margin:0 0 40px 0;display:block;width:400px;}
+.alert {margin:20px 0;}
 .message {background:#f6f6f6;border:1px solid #eee;padding:10px;@include border-radius(5px);}

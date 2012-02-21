@@ -4,6 +4,8 @@ class Upload
   include Mongoid::Paperclip
   
   CATEGORY = %w(document design contract file).map {|type| type.camelize}.sort
+  
+  UPLOAD_LIMIT = 1000
 
   has_mongoid_attached_file :file
   
@@ -35,6 +37,10 @@ class Upload
   # Returns the full path to a download so that it can be shared
   def path
     self.file.to_s
+  end
+  
+  def limit_reached?
+    self.files.sum(:document_file_size) > 100
   end
   
 end

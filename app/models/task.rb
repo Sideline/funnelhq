@@ -16,6 +16,10 @@ class Task
   field :complete, :type => Boolean, :default => false
   field :project_id, :type => Integer
   
+  ## Scope ##
+  
+  scope :active, :where => {:complete => false}
+  
   ## methods ##
   
   class << self
@@ -23,7 +27,7 @@ class Task
   end
   
   def complete?
-    self.complete 
+    self.complete
   end
   
 end

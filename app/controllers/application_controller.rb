@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
   
   before_filter :find_user
   
+  before_filter :check_action
+  
   layout :layout_by_resource
   
   private 
@@ -15,13 +17,23 @@ class ApplicationController < ActionController::Base
     @user = current_user
   end
   
+  def check_action
+    puts "========"
+    puts controller_name
+    puts action_name
+  end
+  
   def layout_by_resource
-    if controller_name == 'users' && action_name == 'edit'
-      "application"
-    elsif devise_controller?
-      "devise"
+    if controller_name == 'registrations' && action_name == 'new'
+      'login'
+    elsif controller_name == 'registrations' && action_name == 'create'
+      'login'
+    elsif controller_name == 'passwords' && action_name == 'new'
+      'login'
+    elsif controller_name == 'sessions' && action_name == 'new'
+      'login'
     else
-      "application"
+      'application'
     end
-  end  
+  end
 end

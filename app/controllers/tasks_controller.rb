@@ -5,7 +5,7 @@ class TasksController < ApplicationController
   before_filter :find_task, :only => [:show, :edit, :update, :destroy]
   
   def index
-    @tasks = @user.tasks.all
+    @tasks = @user.tasks.active
     respond_with @tasks
   end
 
@@ -26,7 +26,7 @@ class TasksController < ApplicationController
     
     respond_to do |format|
       if @task.save
-        format.html { redirect_to @task, notice: 'Task was successfully created.' }
+        format.html { redirect_to tasks_path, notice: 'Task was successfully created.' }
       else
         format.html { render action: "new" }
       end
@@ -52,9 +52,9 @@ class TasksController < ApplicationController
     end
   end
   
-  private 
+  private
   
   def find_task
-    @task = @user.tasks.find(params[:id])    
+    @task = @user.tasks.find(params[:id])
   end
 end

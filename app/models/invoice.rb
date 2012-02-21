@@ -6,8 +6,6 @@ class Invoice
   
   ## validations ##
   
-  validates_presence_of :client_id
-  
   ## fields ##
   
   field :invoice_id, :type => Integer

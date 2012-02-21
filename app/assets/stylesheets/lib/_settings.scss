@@ -5,7 +5,7 @@ $columns: 12;
 $baseline: 20px;
 
 $sans: 'Lato', Helvetica, Arial, sans-serif;
-$serif: “Hoefler Text”, Palatino, “Palatino Linotype”, serif;
+$serif: 'Merriweather', Georgia, Palatino, “Palatino Linotype”, serif;
 $mono: "Andale Mono WT", Monaco, "Courier New", Courier, monospace;
 
 $font-size: 14px;
@@ -26,6 +26,7 @@ $white: white;
 // Accent Colors
 
 $blue: #1D73C3;
+$blue2:#3F4652;
 $off-white:#F9F9F9;
 $orange: darken(#FB8825, 10%);
 $dark-blue:#3F4C59;

@@ -1,7 +1,8 @@
-# Read about factories at http://github.com/thoughtbot/factory_girl
+# Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
   factory :task do
     title "MyString"
+    complete false
   end
 end
