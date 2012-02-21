@@ -1,10 +1,8 @@
-%h1= @upload.title
-
-%p== #{@user.name} wants to share a file with you
-
+%h1.center= @upload.title
+%p.center== #{@user.name} wants to share a file with you. You are free to download this file.
 
 -if @upload.image?
   %img{:src => @upload.file, :alt => @upload.title}
 - else
-
+  %br
   =link_to 'Download file', @upload.path

@@ -25,7 +25,7 @@ class Upload
   ## methods ##
 
   def image?
-    self.file_content_type == 'image/png' || self.file_content_type == 'images/jpg'
+    self.file_content_type == 'image/png' || self.file_content_type == 'image/jpeg'
   end
 
   def is_public?
