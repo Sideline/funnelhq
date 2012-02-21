@@ -1,6 +1,7 @@
 class Invoice
   
-  include Core::Mongoid::Document
+  include Mongoid::Document
+  include Mongoid::MultiParameterAttributes
   
   STATUS = %w(draft sent paid unpaid).map{|status| status.camelize}
   
@@ -10,6 +11,7 @@ class Invoice
   
   field :invoice_id, :type => Integer
   field :client_id, :type => Integer
+  field :date, :type => Date
   
   ## associations ##
 
