@@ -15,7 +15,6 @@
     = f.label :date
     = f.date_select(:date, :default => Date.today, :order => [:month, :day, :year], :start_year => Date.today.year, :end_year => Date.today.year + 3)
 	
-
     = f.fields_for :line_items do |builder|
 
       %table
