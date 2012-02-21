@@ -21,7 +21,7 @@ class Baseapp.Views.Tasks.NewView extends Backbone.View
 
     @model.unset("errors")
 
-    @collection.create(@model.toJSON(),
+    @collection.create(@model,
       success: (task) =>
         @model = task
         window.location.hash = "/#{@model.id}"

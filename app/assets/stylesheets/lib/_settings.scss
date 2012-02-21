@@ -11,7 +11,7 @@ $mono: "Andale Mono WT", Monaco, "Courier New", Courier, monospace;
 $font-size: 14px;
 
 // Links
-$links: #0064cd;
+$links: #1D73C3;
 $links-hover: darken($links, 10%);
 $links-focus: darken($links, 10%);
 
@@ -24,14 +24,10 @@ $gray-lighter: lighten($black, 80%);
 $white: white;
 
 // Accent Colors
-$blue: #049cdb;
-$blue-dark: #0064cd;
-$green: #46a546;
-$red: #9d261d;
-$yellow: #ffc40d;
-$orange: #f89406;
-$pink: #c3325f;
-$purple: #7a43b6;
-$borders: #cccccc;
 
-$sidebar: #5a5f64;
+$blue: #1D73C3;
+$off-white:#F9F9F9;
+$orange: darken(#FB8825, 10%);
+$dark-blue:#3F4C59;
+$borders: #CCCCCC;
+$sidebar: #43515E;

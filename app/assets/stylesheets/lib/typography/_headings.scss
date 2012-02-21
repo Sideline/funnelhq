@@ -1,9 +1,10 @@
 h1,h2,h3,h4,h5,h6 {
   margin-bottom: $baseline;
-  color: #2c2a34;
-  font-weight: bold;
+  color: $dark-blue;
+  font-weight: 100;
   line-height:40px;
-  text-transform:uppercase;
+  text-transform:capitalize;
+  font-family:georgia;
 }
 
 h1 {

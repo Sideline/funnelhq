@@ -42,9 +42,11 @@ body {
 
 #nav {
   height: 40px;
-  background: #2c2a34;
+  background:$dark-blue;
   width: 100%;
   margin-bottom: 20px;
+  position:relative;
+  z-index:99;
 }
 #nav ul {
   float: right;
@@ -60,24 +62,25 @@ body {
 
 #sidebar {
   width: 220px;
-  border-right: 10px solid #4b4753;
-  background: $sidebar;
+  border-right: 2px solid darken(#eee, 10%);
+  background: lighten(#e1e9ef,4%);
   margin: 40px 20px 0 0;
   position: absolute;
-  top: 0;
+  top: 0px;
   height: 100%;
 
   li {
     list-style: none;
-    border-bottom: 1px solid darken(#5A5F64, 5%); 
+    border-bottom: 1px solid darken(#e1e9ef, 5%); 
     padding: 20px 0;
     cursor: pointer
   }
   li:hover, li.active {
-    background: darken(#5A5F64, 3%);
+    background: darken($dark-blue, 10%);
+    a{color:#FFF};
   }
   a {
-    color: #fff;
+    color: #333;
     margin-left: 20px;
     padding-top: 10px;
     text-transform: uppercase;
@@ -95,11 +98,12 @@ body {
   margin-left: 260px;
   overflow: auto;
   background: #fff;
+  border:1px solid $borders;
   padding: 20px;@include border-radius(5px)
 }
 
 .update {
-  background: #eee;
+  background: $off-white;
   min-height: 100px;
   padding: 20px 10px;
   margin-bottom: 10px;
