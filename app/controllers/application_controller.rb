@@ -5,9 +5,7 @@ class ApplicationController < ActionController::Base
   before_filter :authenticate_user!
   
   before_filter :find_user
-  
-  before_filter :check_action
-  
+
   layout :layout_by_resource
   
   private 
@@ -17,12 +15,7 @@ class ApplicationController < ActionController::Base
     @user = current_user
   end
   
-  def check_action
-    puts "========"
-    puts controller_name
-    puts action_name
-  end
-  
+  # Render the correct layout for a given action
   def layout_by_resource
     if controller_name == 'registrations' && action_name == 'new'
       'login'
