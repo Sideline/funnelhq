@@ -5,6 +5,8 @@ class User
   include Core::Mongoid::Document
   
   ROLES = %w(admin client collaborator)
+  
+  UPLOAD_LIMIT = 1000000
 
   ## Database authenticatable
   field :email,              :type => String, :null => false
@@ -44,6 +46,7 @@ class User
   embeds_many :uploads
   embeds_many :tasks
   embeds_many :invoices
+  embeds_many :issues
   
   ## Attr Accessors ##
   
@@ -82,5 +85,9 @@ class User
     key = Digest::SHA1.hexdigest(Time.now.to_s + rand(12345678).to_s)[1..10]
     self.api_key = self._id.to_s + key
   end
-    
+  
+  def upload_limit_reached?
+    self.uploads.sum(:file_file_size) > UPLOAD_LIMIT
+  end
+  
 end

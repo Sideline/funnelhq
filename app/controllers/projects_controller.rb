@@ -11,6 +11,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = @user.projects.find(params[:id])
+    @tasks = @user.tasks.where(project_title: @project.title)
     respond_with @project
   end
 

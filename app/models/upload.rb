@@ -5,8 +5,6 @@ class Upload
   
   CATEGORY = %w(document design contract file).map {|type| type.camelize}.sort
   
-  UPLOAD_LIMIT = 1000
-
   has_mongoid_attached_file :file
   
   ## Validation ##
@@ -38,9 +36,5 @@ class Upload
   def path
     self.file.to_s
   end
-  
-  def limit_reached?
-    self.files.sum(:document_file_size) > 100
-  end
-  
+
 end

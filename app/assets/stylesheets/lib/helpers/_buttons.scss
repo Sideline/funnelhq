@@ -26,3 +26,5 @@ input[type=submit].button { -webkit-appearance: none; }
 
 .button.delete {
   @include button(#9d261d, white); }
+
+a.button {padding:3px 10px;}

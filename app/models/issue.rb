@@ -7,6 +7,7 @@ class Issue
   field :title, :type => String
   field :description, :type => String
   field :status, :type => String
+  field :project_title, :type => String
   
   ## constants ##
   
@@ -16,9 +17,11 @@ class Issue
   
   validates_presence_of :title
   validates_presence_of :description
-  validates_presence_of :status
+  validates_presence_of :project_title
   
   ## associations ##
+  
+  embedded_in :user, :inverse_of => :issues
     
   ## scopes ##
   

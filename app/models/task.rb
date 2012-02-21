@@ -14,12 +14,12 @@ class Task
   
   field :title, :type => String
   field :complete, :type => Boolean, :default => false
-  field :project_id, :type => Integer
+  field :project_title, :type => String
   
   ## Scope ##
   
   scope :active, :where => {:complete => false}
-  
+
   ## methods ##
   
   class << self

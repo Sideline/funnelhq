@@ -5,17 +5,17 @@ class IssuesController < ApplicationController
   before_filter :find_issue, :only => [:edit, :update, :destroy]
 
   def index
-    @issues = Issue.all
+    @issues = @user.issues.all
     respond_with @issues
   end
 
   def show
-    @issue = Issue.find(params[:id])
+    @issue = @user.issues.find(params[:id])
     respond_with @issue
   end
 
   def new
-    @issue = Issue.new
+    @issue = @user.issues.new
     respond_with @issue
   end
 
@@ -23,7 +23,7 @@ class IssuesController < ApplicationController
   end
 
   def create
-    @issue = Issue.new(params[:issue])
+    @issue = @user.issues.new(params[:issue])
 
     respond_to do |format|
       if @issue.save
@@ -55,6 +55,6 @@ class IssuesController < ApplicationController
   private
   
   def find_issue
-    @issue = Issue.find(params[:id])
+    @issue = @user.issues.find(params[:id])
   end
 end

@@ -1,23 +1,29 @@
 %h1 Listing issues
 
-%table
-  %tr
-    %th Title
-    %th Status
-    %th Description
-    %th
-    %th
-    %th
+-if current_user.issues.present?
 
-  - @issues.each do |issue|
+  %table
     %tr
-      %td= issue.title
-      %td= issue.status
-      %td= issue.description
-      %td= link_to 'Show', issue
-      %td= link_to 'Edit', edit_issue_path(issue)
-      %td= link_to 'Destroy', issue, :confirm => 'Are you sure?', :method => :delete
+      %th Title
+      %th Status
+      %th Description
+      %th
+      %th
+      %th
+
+    - @issues.each do |issue|
+      %tr
+        %td= issue.title
+        %td= issue.status
+        %td= issue.description
+        %td= link_to 'Show', issue
+        %td= link_to 'Edit', edit_issue_path(issue)
+        %td= link_to 'Destroy', issue, :confirm => 'Are you sure?', :method => :delete
+
+- else 
+  
+  %h3 Horray! No issues on any of your projects. You totally rock!
 
 %br
 
-= link_to 'New Issue', new_issue_path
+= link_to 'New Issue', new_issue_path, :class => 'button'

@@ -12,7 +12,7 @@
 
   .field
     = f.label "Project"
-    = f.select :project_id, current_user.projects.collect{ |c| [c.title, c.id] }.unshift(["N/A", ""])
+    = f.select :project_title, current_user.projects.collect{ |project| [project.title, project.title] }.unshift(["N/A", ""])
 
   -if controller.action_name == "edit"
     .field

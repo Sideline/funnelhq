@@ -9,11 +9,13 @@
   .field
     = f.label :title
     = f.text_field :title
+
   .field
-    = f.label :status
-    = f.text_field :status
+    = f.label "Project"
+    = f.select :project_title, current_user.projects.collect{ |project| [project.title, project.title] }.unshift(["N/A", ""])
+
   .field
     = f.label :description
-    = f.text_area :description
+    = f.text_field :description
   .actions
     = f.submit 'Save'
