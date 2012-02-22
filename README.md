@@ -10,7 +10,10 @@ This projects is still in development
 
 A live version is running at http://freelancedeck.herokuapp.com
 
-You can login with email: admin@test.com and pw: password
+You can login with the following email and password: 
+
++ admin@test.com 
++ password
 
 ## Install
 
