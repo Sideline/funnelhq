@@ -1,12 +1,5 @@
 namespace :heroku do
 
-  # Delete existing assets from the public directory
-  #
-  
-  def clear_out_existing_assets
-    
-  end
-
   def precompile_assets
     system 'rake assets:precompile'
   end
