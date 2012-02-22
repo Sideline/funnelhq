@@ -1,10 +1,14 @@
 # Freelance Deck
 
-FreelanceDeck is An open source project management tool for freelancers built with Ruby on Rails and MongoDB.
+FreelanceDeck is an open source business management tool for freelancers.
 
-Manage Projects, tasks, clients, files and client data easily.
+It's built with Ruby on Rails, Clojure and MongoDB.
 
-This projects is very much in the early stages and nowhere near complete but a live version is running at http://freelancedeck.herokuapp.com
+With Freelance Deck you can manage your entire business from one centralised location.
+
+This projects is still in development
+
+A live version is running at http://freelancedeck.herokuapp.com
 
 You can login with email: admin@test.com and pw: password
 
