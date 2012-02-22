@@ -12,8 +12,27 @@
 
 %h3= pluralize @issues.size, 'Issue'
 
-- @issues.each do |issue|
-  %p= issue.title
+%table
+  %tr
+    %th Issue
+    %th Last updated
+
+  - @issues.each do |issue|
+    %tr
+      %td= issue.title
+      %td= pretty_date issue.updated_at
+
+%h3= pluralize @tasks.size, 'Task'
+
+%table
+  %tr
+    %th Task
+    %th Last updated
+
+  - @tasks.each do |task|
+    %tr
+      %td= task.title
+      %td= pretty_date task.updated_at
 
 %h3 Collaborators
 

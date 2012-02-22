@@ -2,6 +2,6 @@
 
 - @feed_items.each do |item|
   %div.update
-    %h3== New #{item.class}
-    %p== #{@user.full_name} created #{item.title}
-    %p== #{time_ago_in_words item.created_at} ago
+    %h3== #{item.class}
+    %p= item.title
+    %p== Created #{time_ago_in_words item.created_at} ago by #{@user.full_name}

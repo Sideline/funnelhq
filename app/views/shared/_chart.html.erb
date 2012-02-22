@@ -1,33 +1,45 @@
-<div id='chart_div'></div>
-
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+<div id='chart'></div>
+
 <script type="text/javascript">
+    
+      // Load the Visualization API and the piechart package.
+google.load('visualization', '1.0', {'packages':['corechart']});
 
-google.load("visualization", "1", {packages:["corechart"]});
-google.setOnLoadCallback(drawChart);
+// Set a callback to run when the Google Visualization API is loaded.
+google.setOnLoadCallback(drawMouseoverVisualization);
 
-function drawChart() {
-  var data = new google.visualization.DataTable();
+// barsVisualization must be global in our script tag to be able
+// to get and set selection.
+var barsVisualization;
 
-  data.addColumn('string', 'Year');
-  data.addColumn('number', 'Clients');
-  data.addColumn('number', 'Projects');
+function drawMouseoverVisualization() {
+	
+	var data = new google.visualization.DataTable();
 
-  data.addRows([
-    ['2004', 1000, 400],
-    ['2005', 1170, 460],
-    ['2006',  860, 580],
-    ['2007', 1030, 540]
-  ]);
+	data.addColumn('string', 'Day');
+	data.addColumn('number', 'Hours');
+	
+	data.addRows([
+      ['2005',3.6],
+      ['2006',4.1],
+      ['2007',3.8],
+      ['2008',3.9],
+      ['2009',4.6],
+    ]);
 
-  var options = {
-    width: 800, height: 340,
-    title: 'Company Performance'
-  };
+	barsVisualization = new google.visualization.ColumnChart(document.getElementById('chart'));
 
-  var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-    chart.draw(data, options);
-  }
+	barsVisualization.draw(data, {
+	width: 800, 
+	height: 266,
+	colors: ['#537085'],
+	chartArea: {left:40,top:30, width:"75%",height:"70%"},
+	legendTextStyle: {color:'#666666'}});
+	
+}
+
 </script>
 
 
