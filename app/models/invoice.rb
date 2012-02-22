@@ -27,6 +27,11 @@ class Invoice
   
   ## methods ##
   
+  # Calculates the total value of all line items for an invoice
+  #
+  # @param 
+  # @return [ Integer ] the sum of all line items
+  
   def calculate_invoice_total
     total = [ ]
     self.line_items.each do |item|

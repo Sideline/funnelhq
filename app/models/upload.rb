@@ -23,16 +23,30 @@ class Upload
   field :is_public, :type => Boolean, :default => :false
   
   ## methods ##
+  
+  # Returns true if a file upload is an image
+  #
+  # @param 
+  # @return [Boolean]
 
   def image?
     self.file_content_type == 'image/png' || self.file_content_type == 'image/jpeg'
   end
+  
+  # Returns true if an upload is to be shared 
+  #
+  # @param 
+  # @return [Boolean]
 
   def is_public?
     self.is_public
   end
   
   # Returns the full path to a download so that it can be shared
+  #
+  # @param 
+  # @return [String]
+
   def path
     self.file.to_s
   end

@@ -21,11 +21,11 @@ class Client
 
   ## Methods ##
   
-  class << self
-    
-  end
-  
   # Returns a users full name
+  #
+  # @param 
+  # @return
+  
   def full_name
     "#{self.first_name} #{self.last_name}"
   end

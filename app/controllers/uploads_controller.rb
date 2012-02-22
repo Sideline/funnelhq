@@ -58,7 +58,7 @@ class UploadsController < ApplicationController
   end
   
   # Share an upload with an external user
-  
+
   def share
     @user = User.find(params[:user_id])
     @upload = @user.uploads.find(params[:id])

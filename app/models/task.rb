@@ -22,9 +22,10 @@ class Task
 
   ## methods ##
   
-  class << self
-    
-  end
+  # Returns true if a project is complete
+  #
+  # @param 
+  # @return [Boolean]
   
   def complete?
     self.complete

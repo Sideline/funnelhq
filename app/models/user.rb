@@ -54,17 +54,28 @@ class User
   
   before_save :generate_api_key
   
-  class << self
-    
-  end
+  # 
+  #
+  # @param 
+  # @return []
   
   def number_of_projects
     self.projects.count
   end
   
+  # 
+  #
+  # @param 
+  # @return []
+  
   def recent_projects
     self.projects.criteria.and(:updated_at.gt => 2.weeks.ago)
   end
+  
+  # Returns the full name of a user
+  #
+  # @param 
+  # @return [String] the users full name
    
   def full_name
     "#{self.first_name} #{self.last_name}"
@@ -72,19 +83,38 @@ class User
   
   alias_method :name, :full_name # I always type user.name instead of user.full_name
 
+  # Returns true if a user is an admin
+  #
+  # @param 
+  # @return [Boolean]
+  
   def admin?
     self.role.downcase == "admin"
   end
+  
+  # Returns true if user hasn't previously logged in to the application
+  #
+  # @param 
+  # @return [Boolean]
   
   def first_login?
     self.sign_in_count == 1 && self.projects.count == 0 && self.clients.count == 0 && self.tasks.count == 0
   end
   
   # Generate a unique api key for this user
+  #
+  # @param 
+  # @return [String] unique API key for a user
+  
   def generate_api_key
     key = Digest::SHA1.hexdigest(Time.now.to_s + rand(12345678).to_s)[1..10]
     self.api_key = self._id.to_s + key
   end
+  
+  # Checks the file attachment size
+  #
+  # @param 
+  # @return [Boolean]
   
   def upload_limit_reached?
     self.uploads.sum(:file_file_size) > UPLOAD_LIMIT

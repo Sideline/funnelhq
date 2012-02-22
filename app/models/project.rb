@@ -29,9 +29,19 @@ class Project
   
   ## methods ##
   
+  # Returns true if a project is active
+  #
+  # @param 
+  # @return [Boolean]
+  
   def active?
     self.project_active
   end
+  
+  # Returns yes if a project is active, else false
+  #
+  # @param 
+  # @return [String]
   
   def active_yes_no?
     active? ? "Yes" : "No"
