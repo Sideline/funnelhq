@@ -1,4 +1,4 @@
-# Freelance Deck
+# Freelance Deck 
 
 FreelanceDeck is an open source business management tool for freelancers.
 
@@ -30,5 +30,7 @@ Run the following rake command to generate a test user to login
 
 ## License 
 
-This software is provided free for users hosting it on their on system. A paid version will be available for those wanting a hosted solution.
+This software is provided free for users hosting it on their on system. 
+
+A paid version will be available for those wanting a hosted solution.
 
