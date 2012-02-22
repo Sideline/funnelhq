@@ -27,5 +27,8 @@ Run the following rake command to generate a test user to login
 
     rake db:seed
 
-That will create a user with email: admin@test.com password: testing
+
+## License 
+
+This software is provided free for users hosting it on their on system. A paid version will be available for those wanting a hosted solution.
 
