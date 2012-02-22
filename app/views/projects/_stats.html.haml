@@ -1,7 +1,7 @@
 #user_stats
   %li
-    = current_user.projects.size
-    %span Issues
+    = @issues.size
+    %span= plural_without_count @issues.size, 'Issue'
   %li
     = @tasks.size
-    %span Tasks
+    %span= plural_without_count @tasks.size, 'Task'

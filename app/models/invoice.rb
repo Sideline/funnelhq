@@ -5,6 +5,8 @@ class Invoice
   
   STATUS = %w(draft sent paid unpaid).map{|status| status.camelize}
   
+  before_save :calculate_invoice_total
+  
   ## validations ##
   
   ## fields ##
@@ -12,6 +14,7 @@ class Invoice
   field :invoice_id, :type => Integer
   field :client_id, :type => Integer
   field :date, :type => Date
+  field :total, :type => Integer
   
   ## associations ##
 
@@ -21,5 +24,16 @@ class Invoice
   
   accepts_nested_attributes_for :line_items
   validates_associated :line_items
+  
+  ## methods ##
+  
+  def calculate_invoice_total
+    total = [ ]
+    self.line_items.each do |item|
+      total.push(item.qty * item.price)
+    end
+    # Return the sum of the items
+    return total.inject(:+)    
+  end
   
 end

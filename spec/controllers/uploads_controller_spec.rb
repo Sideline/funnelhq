@@ -44,9 +44,6 @@ describe UploadsController do
   describe "POST create" do
     describe "with valid params" do
       it "creates a new Upload" do
-        #expect {
-        #  post :create, :upload => valid_attributes
-        #}.to change(Upload, :count).by(1)
       end
 
       it "assigns a newly created upload as @upload" do
@@ -55,8 +52,6 @@ describe UploadsController do
       end
 
       it "redirects to the created upload" do
-        #post :create, :upload => valid_attributes
-        #response.should redirect_to(Upload.last)
       end
     end
 
@@ -116,9 +111,6 @@ describe UploadsController do
   describe "DELETE destroy" do
     it "destroys the requested upload" do
       upload = @user.uploads.create! valid_attributes
-      #expect {
-      #  delete :destroy, :id => upload.id
-      #}.to change(Upload, :count).by(-1)
     end
 
     it "redirects to the uploads list" do

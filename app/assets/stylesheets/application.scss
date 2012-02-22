@@ -42,7 +42,7 @@ body {
 
 #nav {
   height: 40px;
-  background:$dark-blue;
+  background:darken($dark-blue,5%);
   width: 100%;
   margin-bottom: 20px;
   position:relative;
@@ -62,7 +62,6 @@ body {
 
 #sidebar {
   width: 220px;
-  border-right: 2px solid darken(#eee, 10%);
   background: $blue2;
   margin: 40px 20px 0 0;
   position: absolute;
@@ -195,3 +194,4 @@ body {
 #share {width:940px;margin:0 auto;background:#fff;padding:40px;}
 #share img {max-width:900px;margin:0 auto;display:block;}
 .share_link{display:block;text-align:center;}
+.avatar{width:80px;height:80px;background:#CCC;}

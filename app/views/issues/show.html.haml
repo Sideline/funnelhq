@@ -1,15 +1,8 @@
-%p#notice= notice
+%h2= @issue.project_title
 
-%p
-  %b Title:
-  = @issue.title
-%p
-  %b Status:
-  = @issue.status
-%p
-  %b Description:
-  = @issue.description
+%h3= @issue.title
 
-= link_to 'Edit', edit_issue_path(@issue)
-\|
+%p== Raised by: #{@issue.raised_by}
+%p== Issue: #{@issue.description}
+
 = link_to 'Back', issues_path

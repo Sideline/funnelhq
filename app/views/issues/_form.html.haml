@@ -12,10 +12,14 @@
 
   .field
     = f.label "Project"
-    = f.select :project_title, current_user.projects.collect{ |project| [project.title, project.title] }.unshift(["N/A", ""])
+    = f.select :project_title, current_user.projects.collect{ |project| [project.title, project.title] }
 
   .field
     = f.label :description
     = f.text_field :description
+
+  .field
+    = f.hidden_field :raised_by, :value => current_user.name
+  
   .actions
     = f.submit 'Save'

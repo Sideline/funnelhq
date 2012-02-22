@@ -1,18 +1,24 @@
 %h1 Invoices
 
+%h3 Year Total: $456
+%h3 Invoiced : $300 
+%h3 Unpaid : $23
+
 %table
   %tr
+    %th Id
+    %th Date
     %th Client
     %th Amount
-    %th Date
-    %th Paid?
+    %th Delete
  
   - @invoices.each do |invoice|
     %tr
-      %td= link_to current_user.clients.find(invoice.client_id).name, invoice
+      %td= link_to invoice.id, invoice
       %td
       %td
       %td
+      %td= link_to 'Delete', invoice, :method => :delete, :confirm => 'Are you sure?'
 
 = link_to 'New invoice', new_invoice_path, :class => 'button'
    

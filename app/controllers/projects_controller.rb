@@ -9,10 +9,13 @@ class ProjectsController < ApplicationController
     respond_with @projects
   end
 
+  # Refactor this into scopes and models
   def show
     @project = @user.projects.find(params[:id])
     @tasks = @user.tasks.where(project_title: @project.title)
-    respond_with @project
+    @issues = @user.tasks.where(project_title: @project.title)
+    
+    respond_with @project, @tasks, @issues
   end
 
   def new
@@ -28,7 +31,6 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.save
-        puts "Tried to save mongo"
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
       else
         puts @project.errors.full_messages.inspect

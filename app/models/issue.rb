@@ -8,7 +8,8 @@ class Issue
   field :description, :type => String
   field :status, :type => String
   field :project_title, :type => String
-  
+  field :raised_by, :type => String
+    
   ## constants ##
   
   STATUSES = %w(open closed in-progress)

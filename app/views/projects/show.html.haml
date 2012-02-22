@@ -1,12 +1,19 @@
 %h1= @project.title
 %p= @project.description
+
 %p= link_to 'Edit', edit_project_path(@project)
+
 %ul.project_meta
   %li== Active : #{@project.active_yes_no?}
   %li== Type : #{@project.project_type}
   %li== Client : #{find_client}
 
 = render 'stats'
+
+%h3= pluralize @issues.size, 'Issue'
+
+- @issues.each do |issue|
+  %p= issue.title
 
 %h3 Collaborators
 

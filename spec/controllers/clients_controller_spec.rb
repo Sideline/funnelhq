@@ -44,9 +44,6 @@ describe ClientsController do
   describe "POST create" do
     describe "with valid params" do
       it "creates a new Client" do
-        #expect {
-        #  post :create, :client => valid_attributes
-        #}.to change(Client, :count).by(1)
       end
 
       it "assigns a newly created client as @client" do
@@ -56,8 +53,6 @@ describe ClientsController do
       end
 
       it "redirects to the created client" do
-        #post :create, :client => valid_attributes
-        #response.should redirect_to(Client.last)
       end
     end
 
@@ -117,9 +112,6 @@ describe ClientsController do
   describe "DELETE destroy" do
     it "destroys the requested client" do
       client = @user.clients.create! valid_attributes
-      #expect {
-      #  delete :destroy, :id => client.id
-      #}.to change(Client, :count).by(-1)
     end
 
     it "redirects to the clients list" do

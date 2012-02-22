@@ -9,7 +9,7 @@
 
   .field
     = f.label :client_id
-    = f.select :client_id, @clients
+    = f.select :client_id, current_user.clients.collect{ |c| [c.name, c.id] }
 
   .field.date
     = f.label :date
@@ -18,17 +18,6 @@
     = f.fields_for :line_items do |builder|
 
       %table
-        %tr
-          %td
-            = builder.label :qty
-            = builder.text_field :qty
-          %td
-            = builder.label :description
-            = builder.text_field :description
-          %td
-            = builder.label :price
-            = builder.text_field :price
-
         %tr
           %td
             = builder.label :qty

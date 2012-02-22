@@ -2,7 +2,7 @@ class Project
   
   include Core::Mongoid::Document
   
-  TYPES = %w(admin internal client personal software design).map {|type| type.camelize}.sort
+  TYPES = %w(admin internal client personal software design other).map {|type| type.camelize}.sort
 
   ## fields ##
   

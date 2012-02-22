@@ -13,11 +13,11 @@
 
   .field
     = f.label :project_type
-    = f.select :project_type, Project::TYPES.unshift("N/A")
+    = f.select :project_type, Project::TYPES
    
   .field
     = f.label 'Client'
-    = f.select :client_id, current_user.clients.collect{ |c| [c.name, c.id] }.unshift(["N/A", ""])
+    = f.select :client_id, current_user.clients.collect{ |c| [c.name, c.id] }
 
   .field
     = f.label :description

@@ -1,7 +1,7 @@
 %h2 Recent activity
 
-- @projects.each do |project|
+- @feed_items.each do |item|
   %div.update
-    %h3 New Project
-    %p== #{@user.full_name} created the project #{project.title}
-    %p== #{time_ago_in_words project.created_at} ago
+    %h3== New #{item.class}
+    %p== #{@user.full_name} created #{item.title}
+    %p== #{time_ago_in_words item.created_at} ago

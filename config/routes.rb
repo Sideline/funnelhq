@@ -30,6 +30,7 @@ Baseapp::Application.routes.draw do
   resources :invoices
   
   match 'uploads/:user_id/share/:id', :to => 'uploads#share' 
+  match 'invoices/view/:id', :to => 'invoices#view' 
      
   # Default route
   

@@ -1,26 +1,10 @@
-%h1 Company Name: Invoice
+= render 'invoice'
 
-%p== Invoice Date: #{@invoice.date}
-%p== Payment Due: #{@invoice.date + 30.days} (30 days)
+%br
+%br
 
-%p== To: #{@client.name}
-%p== From: #{@user.name} 
+%h3 Share this invoice
 
-%table#invoice
-  %tr
-    %th Qty
-    %th Description
-    %th Price
-    %th Total
-
-  - @invoice.line_items.each do |line_item|
- 
-    %tr
-      %td= line_item.qty
-      %td= line_item.description
-      %td= line_item.price
-      %td= (line_item.qty.to_f * line_item.price.to_f)
-
-%h2 Total: $123
-
-%p Thanks for your custom. If you have any questions about this invoice don't hesitate to call. We accept the following payment methods.
+%p Your clients will be able to view this invoice online at the following URL
+%code
+  ="#{root_url}invoices/view/#{@invoice.id}"
