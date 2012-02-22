@@ -1,11 +1,14 @@
 namespace :heroku do
 
-  # Precompile all assets 
-  # Commit to git 
-  # Deploy to heroku
+  # Delete existing assets from the public directory
+  #
   
+  def clear_out_existing_assets
+    
+  end
+
   def precompile_assets
-    system 'rake assets:procompile'
+    system 'rake assets:precompile'
   end
   
   def git_checkin
