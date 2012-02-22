@@ -6,7 +6,7 @@ It's built with Ruby on Rails, Clojure and MongoDB.
 
 With Freelance Deck you can manage your entire business from one centralised location.
 
-This projects is still in development
+This project is still in development
 
 A live version is running at http://freelancedeck.herokuapp.com
 
@@ -14,6 +14,15 @@ You can login with the following email and password:
 
 + admin@test.com 
 + password
+
+## Technology
+
+This app uses 
+
++ MongoDB
++ Rails 3
++ Clojure
++ Rspec
 
 ## Install
 
@@ -26,7 +35,6 @@ You can login with the following email and password:
 Run the following rake command to generate a test user to login
 
     rake db:seed
-
 
 ## Rake tasks
 
