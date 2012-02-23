@@ -5,7 +5,7 @@ class IssuesController < ApplicationController
   before_filter :find_issue, :only => [:edit, :update, :destroy]
 
   def index
-    @issues = @user.issues.all
+    @issues = @user.issues.page(params[:page]) 
     respond_with @issues
   end
 

@@ -5,8 +5,12 @@ class Upload
   
   CATEGORY = %w(document design contract file).map {|type| type.camelize}.sort
   
-  has_mongoid_attached_file :file
-  
+  has_mongoid_attached_file :file,
+    :storage => :s3,
+      :s3_credentials => "#{Rails.root}/config/s3.yml",
+      :bucket => "funnel_production",
+      :path => ":attachment/:id/:filename"
+    
   ## Validation ##
   
   validates_presence_of :title
@@ -31,6 +35,17 @@ class Upload
 
   def image?
     self.file_content_type == 'image/png' || self.file_content_type == 'image/jpeg'
+  end
+    
+  ## methods ##
+  
+  # Returns the Amazon S3 URL for an upload
+  #
+  # @param 
+  # @return [String] the url to the file upload on Amazon S3
+  
+  def s3_url
+    "https://s3.amazonaws.com/your-bucket-name/user_avatars/aa/bb/cc/aabbccddeeff/thumbnail.jpg"
   end
   
   # Returns true if an upload is to be shared 

@@ -17,24 +17,25 @@ var barsVisualization;
 function drawMouseoverVisualization() {
 	
 	var data = new google.visualization.DataTable();
-
-	data.addColumn('string', 'Day');
-	data.addColumn('number', 'Hours');
+	        data.addColumn('string', 'Year');
+	        data.addColumn('number', 'Sales');
+	        data.addColumn('number', 'Expenses');
+	        data.addRows([
+	          ['January', 1000, 400],
+	          ['February', 1170, 460],
+	          ['March', 660, 320],
+	          ['April', 330, 140],
+	          ['April', 230, 240],
+	          ['April', 730, 140]
+	        ]);
 	
-	data.addRows([
-      ['2005',3.6],
-      ['2006',4.1],
-      ['2007',3.8],
-      ['2008',3.9],
-      ['2009',4.6],
-    ]);
 
 	barsVisualization = new google.visualization.ColumnChart(document.getElementById('chart'));
 
 	barsVisualization.draw(data, {
-	width: 800, 
-	height: 266,
-	colors: ['#537085'],
+	width: 1000, 
+	height: 300,
+	colors: ['#537085', '#eeeeee'],
 	chartArea: {left:40,top:30, width:"75%",height:"70%"},
 	legendTextStyle: {color:'#666666'}});
 	

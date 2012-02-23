@@ -1,0 +1,13 @@
+development:
+  bucket: funnel_development
+  access_key_id: AKIAJ74V7I6MX2DBE2NQ
+  secret_access_key: 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
+test:
+  bucket: funnel_development
+  access_key_id: AKIAJ74V7I6MX2DBE2NQ
+  secret_access_key: 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
+production:
+  bucket: ENV['S3_BUCKET']
+  access_key_id: ENV['S3_KEY']
+  secret_access_key: ENV['S3_SECRET']
+

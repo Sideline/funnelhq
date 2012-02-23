@@ -1,5 +1,7 @@
 %h1 Listing clients
 
+%p= paginate @clients
+
 - if @clients.blank?
   %p You don't have any clients yet.
 - else

@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
   before_filter :find_project, :only => [:edit, :update, :destroy]
 
   def index
-    @projects = @user.projects.all
+    @projects = @user.projects.page(params[:page]) 
     respond_with @projects
   end
 

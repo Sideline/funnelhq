@@ -1,5 +1,7 @@
 %h1 Projects
 
+%p= paginate @projects
+
 - if @projects.blank?
   %p You don't have any projects yet.
 - else

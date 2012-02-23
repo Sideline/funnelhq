@@ -1,5 +1,7 @@
 %h1 Listing issues
 
+%p= paginate @issues
+
 -if current_user.issues.present?
 
   %table

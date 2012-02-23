@@ -42,7 +42,7 @@ body {
 
 #nav {
   height: 40px;
-  background:darken($dark-blue,5%);
+  background:darken($dark-blue,9%);
   width: 100%;
   margin-bottom: 20px;
   position:relative;
@@ -187,13 +187,55 @@ body {
   }
 }
 
-#api_key {margin:0 0 40px 0;display:block;width:400px;}
-.alert {margin:20px 0;}
-.message {background:#f6f6f6;border:1px solid #eee;padding:10px;@include border-radius(5px);}
-.field.date select {width:180px;float:left;margin-right:10px;}
-#share {width:940px;margin:0 auto;background:#fff;padding:40px;}
-#share img {max-width:900px;margin:0 auto;display:block;}
-.share_link{display:block;text-align:center;}
-.avatar{width:80px;height:80px;background:#CCC;}
+#api_key {
+	margin: 0 0 40px 0;
+	display: block;
+	width: 400px;
+}
+.alert {
+	margin: 20px 0;
+}
+.message {
+	background: #f6f6f6;
+	border: 1px solid #eee;
+	padding: 10px;@include border-radius(5px);
+}
+.field.date select {
+	width: 180px;
+	float: left;
+	margin-right: 10px;
+}
+#share {
+	width: 940px;
+	margin: 0 auto;
+	background: #fff;
+	padding: 40px;
+}
+#share img {
+	max-width: 900px;
+	margin: 0 auto;
+	display: block;
+}
+.share_link {
+	display: block;
+	text-align: center;
+}
+.avatar {
+	width: 80px;
+	height: 80px;
+	background: #CCC;
+}
 
-#chart{height:266px;width:800px;display:block;margin:40px 0 20px 0;}
+#chart {
+	height: 266px;
+	width: 800px;
+	display: block;
+	margin: 40px 0 20px 0;
+}
+
+.pagination {
+	.prev, .next, .first, .last {display:none;}
+}
+
+#pages {background:#f7f7f7 url('funneldesign.jpg') no-repeat center top;height:1500px;width:1600px;margin: 0 auto;}
+

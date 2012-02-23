@@ -5,7 +5,7 @@ class ClientsController < ApplicationController
   before_filter :find_client, :only => [:show, :edit, :update, :destroy]
   
   def index
-    @clients = @user.clients.all
+    @clients = @user.clients.page(params[:page]) 
     respond_with @clients
   end
 

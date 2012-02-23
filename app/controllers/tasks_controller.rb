@@ -5,7 +5,7 @@ class TasksController < ApplicationController
   before_filter :find_task, :only => [:show, :edit, :update, :destroy]
   
   def index
-    @tasks = @user.tasks.active.order_by([:project_title, :asc])
+    @tasks = @user.tasks.active.order_by([:project_title, :asc]).page(params[:page])
     respond_with @tasks
   end
 

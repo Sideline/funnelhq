@@ -22,3 +22,4 @@ rerun.txt
 pickle-email-*.html
 /db/mongodumps
 /public/assets
+/config/s3.yaml

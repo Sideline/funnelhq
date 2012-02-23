@@ -7,7 +7,7 @@ class UploadsController < ApplicationController
   before_filter :find_upload, :only => [:show, :edit, :update, :destroy]
   
   def index
-    @uploads = @user.uploads.all
+    @uploads = @user.uploads.page(params[:page]) 
 
     respond_to do |format|
       format.html 

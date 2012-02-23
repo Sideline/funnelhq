@@ -1,0 +1,13 @@
+%h3= pluralize @tasks.size, 'Task'
+
+- if @tasks.present?
+
+  %table
+    %tr
+      %th Task
+      %th Last updated
+
+    - @tasks.each do |task|
+      %tr
+        %td= task.title
+        %td= pretty_date task.updated_at

@@ -6,7 +6,7 @@ class User
   
   ROLES = %w(admin client collaborator)
   
-  UPLOAD_LIMIT = 1000000
+  UPLOAD_LIMIT = 11000000
 
   ## Database authenticatable
   field :email,              :type => String, :null => false
