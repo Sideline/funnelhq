@@ -1,10 +1,12 @@
-# Freelance Deck 
+# Funnel
 
-FreelanceDeck is an open source business management tool for freelancers.
+Funnel is an open source business management tool for freelancers.
+
+This is the open source version of the app running at funnelhq.com aimed at those who want to host this app on their own servers.
 
 It's built with Ruby on Rails, Clojure and MongoDB.
 
-With Freelance Deck you can manage your entire business from one centralised location.
+With Funnel you can manage your entire business from one centralised location.
 
 This project is still in development
 
@@ -22,7 +24,7 @@ This app uses
 + MongoDB
 + Rails 3
 + Clojure
-+ Rspec
++ Amazon s3 for file storage
 
 ## Install
 
@@ -58,5 +60,5 @@ This command does 3 things
 
 This software is provided free for users hosting it on their on system. 
 
-A paid version will be available for those wanting a hosted solution.
+A hosted version will be available at funnelhq.com.
 
