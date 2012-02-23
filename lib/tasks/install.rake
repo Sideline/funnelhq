@@ -1,6 +1,4 @@
 namespace :install
-
-  task :setup
-    
+  task :setup do    
   end
 end
