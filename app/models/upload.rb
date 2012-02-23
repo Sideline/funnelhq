@@ -8,7 +8,7 @@ class Upload
   has_mongoid_attached_file :file,
     :storage => :s3,
       :s3_credentials => "#{Rails.root}/config/s3.yml",
-      :bucket => "funnel_production",
+      :bucket => ENV['S3_BUCKET'],
       :path => ":attachment/:id/:filename"
     
   ## Validation ##
@@ -45,7 +45,7 @@ class Upload
   # @return [String] the url to the file upload on Amazon S3
   
   def s3_url
-    "https://s3.amazonaws.com/your-bucket-name/user_avatars/aa/bb/cc/aabbccddeeff/thumbnail.jpg"
+    "https://s3.amazonaws.com/#{ENV['S3_BUCKET']}/"
   end
   
   # Returns true if an upload is to be shared 
