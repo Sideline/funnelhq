@@ -30,5 +30,4 @@ class Task
   def complete?
     self.complete
   end
-  
 end

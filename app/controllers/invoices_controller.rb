@@ -72,5 +72,4 @@ class InvoicesController < ApplicationController
   def find_invoice 
     @invoice = @user.invoices.find(params[:id])
   end
-
 end

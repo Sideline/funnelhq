@@ -12,6 +12,4 @@ class ApiV1::BaseController < ActionController::Base
       respond_with({:error => "Token is invalid." })
     end
   end
-  
-
 end

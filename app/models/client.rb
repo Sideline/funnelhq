@@ -31,6 +31,8 @@ class Client
     "#{self.first_name} #{self.last_name}"
   end
   
+  # I find name quicker to remember
+  
   alias_method :name, :full_name
-   
+  
 end

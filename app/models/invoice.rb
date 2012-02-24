@@ -54,5 +54,4 @@ class Invoice
     # Return the sum of the items
     self.total = res.inject(:+)    
   end
-  
 end

@@ -53,11 +53,6 @@ class ClientsController < ApplicationController
   
   private 
   
-  # 
-  #
-  # @param 
-  # @return []
-  
   def find_client
     @client = @user.clients.find(params[:id])
   end

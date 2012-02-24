@@ -45,6 +45,5 @@ class Project
   
   def active_yes_no?
     active? ? "Yes" : "No"
-  end
-    
+  end 
 end

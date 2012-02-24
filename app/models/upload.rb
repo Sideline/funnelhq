@@ -65,5 +65,4 @@ class Upload
   def path
     self.file.to_s
   end
-
 end
