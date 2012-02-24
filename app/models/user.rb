@@ -4,7 +4,7 @@ class User
   
   include Core::Mongoid::Document
   
-  ROLES = %w(admin client collaborator)
+  USER_ROLES = %w(admin client collaborator)
   
   UPLOAD_LIMIT = 11000000
 
@@ -25,18 +25,21 @@ class User
   field :last_sign_in_at,    :type => Time
   field :current_sign_in_ip, :type => String
   field :last_sign_in_ip,    :type => String
+  
+  ## Fields ##
 
   field :first_name, :type => String
   field :last_name, :type => String
   field :avatar_url, :type => String
-  field :role, :type => String, :default => 'admin'
   field :api_key, :type => String
+  field :role, :type => String, :default => 'admin'
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
     
   ## Validation ##
      
   validates_presence_of :first_name, :last_name
+  
   validates :email, presence: true, uniqueness: true, format: { with: /^[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i }
   
   ## associations ##
@@ -53,6 +56,17 @@ class User
   attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me, :avatar_url
   
   before_save :generate_api_key
+  
+  # Define some helper method for user roles
+  #
+  # @param 
+  # @return []
+  
+  USER_ROLES.each do |_role|
+    define_method("#{_role}?") do
+      self.role == _role
+    end
+  end
   
   # 
   #
@@ -126,8 +140,6 @@ class User
   # @return [Float]
   
   def invoice_total
-    self.invoices.sum(:total)
-    
+    self.invoices.sum(:total).to_f
   end
-  
 end

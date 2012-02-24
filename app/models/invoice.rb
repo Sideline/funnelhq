@@ -3,7 +3,7 @@ class Invoice
   include Mongoid::Document
   include Mongoid::MultiParameterAttributes
   
-  STATUS = %w(draft sent paid unpaid).map{|status| status.camelize}
+  STATUS = %w(draft sent paid unpaid).map{|status| status.downcase}
   
   before_save :calculate_invoice_total
   
@@ -15,6 +15,7 @@ class Invoice
   field :client_id, :type => Integer
   field :date, :type => Date
   field :total, :type => Integer
+  field :status, :type => String, :default => STATUS.first
   
   ## associations ##
 
@@ -26,6 +27,18 @@ class Invoice
   validates_associated :line_items
   
   ## methods ##
+  
+  # Define some helper method for invoice statuses
+  # e.g Invoice.sent?
+  #
+  # @param 
+  # @return []
+  
+  STATUS.each do |_status|
+    define_method("#{_status}?") do
+      self.status == _status
+    end
+  end
   
   # Calculates the total value of all line items for an invoice
   #

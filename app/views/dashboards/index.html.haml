@@ -1,12 +1,19 @@
-%h1== Hi, #{current_user.name}
+#dashboard_top
+  #dash_left
 
-= avatar_url(current_user)
+    %h1== Hi, #{current_user.name}
 
-- if current_user.first_login?
-  = render 'first_login'
--else
-  = render 'stats'
-  = render 'updates'
+    = avatar_url(current_user)
+
+    - if current_user.first_login?
+      = render 'first_login'
+    -else
+      = render 'stats'
+
+  #dash_right
+    = render 'shared/pie_chart'
+
+= render 'updates'
 
 %br
 %h3 Your API key

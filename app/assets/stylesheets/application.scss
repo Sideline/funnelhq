@@ -100,7 +100,7 @@ body {
 }
 
 #main {
-  width: 70%;
+  max-width: 1100px;
   margin-left: 243px;
   overflow: auto;
   min-height:500px;
@@ -220,10 +220,38 @@ body {
 }
 
 #chart {
-	height: 266px;
-	width: 800px;
 	display: block;
+	width:1000px;
+	height:300px;
 	margin: 40px 0 20px 0;
+}
+
+#dashboard_chart {
+	display: block;
+	margin: 0;
+}
+
+body{overflow:hidden;}
+
+/*-----------------------------------
+
+Dashboard
+
+-----------------------------------*/
+
+#dashboard_top {
+  overflow:hidden;
+  display:block;
+  width:100%;
+}
+
+#dash_left {
+  float:left;
+  width:500px;
+}
+
+#dash_right {
+  float:left;
 }
 
 /*-----------------------------------
