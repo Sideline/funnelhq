@@ -120,4 +120,14 @@ class User
     self.uploads.sum(:file_file_size) > UPLOAD_LIMIT
   end
   
+  # Returns the sum of all invoices for this user
+  #
+  # @param 
+  # @return [Float]
+  
+  def invoice_total
+    self.invoices.sum(:total)
+    
+  end
+  
 end

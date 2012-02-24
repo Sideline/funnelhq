@@ -4,8 +4,16 @@ $columns: 12;
 
 $baseline: 20px;
 
+@font-face{
+  font-family: 'CallunaRegular';
+  src: font-url('Calluna-Regular-webfont.eot');
+  src: local('CallunaRegular'), font-url('Calluna-Regular-webfont.eot?#iefix') format("embedded-opentype"), font-url('Calluna-Regular-webfont.woff') format("woff"), font-url('Calluna-Regular-webfont.ttf') format("truetype"), font-url('Calluna-Regular-webfont.svg#CallunaRegular') format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
 $sans: 'Lato', Helvetica, Arial, sans-serif;
-$serif: 'PT serif', Georgia, serif;
+$serif: 'CallunaRegular', Georgia, serif;
 $mono: "Andale Mono WT", Monaco, "Courier New", Courier, monospace;
 
 $font-size: 14px;
@@ -32,3 +40,5 @@ $orange: darken(#FB8825, 10%);
 $dark-blue:#3F4C59;
 $borders: #CCCCCC;
 $sidebar: #43515E;
+
+

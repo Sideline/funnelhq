@@ -33,12 +33,12 @@ class Invoice
   # @return [ Integer ] the sum of all line items
   
   def calculate_invoice_total
-    total = [ ]
+    res = [ ]
     self.line_items.each do |item|
-      total.push(item.qty * item.price)
+      res.push(item.qty * item.price)
     end
     # Return the sum of the items
-    return total.inject(:+)    
+    self.total = res.inject(:+)    
   end
   
 end

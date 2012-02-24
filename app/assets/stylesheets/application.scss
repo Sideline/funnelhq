@@ -14,7 +14,6 @@ Your CSS goes here
 
 -----------------------------------*/
 
-// Used by Spine to hide and show elements
 .stack > *:not(.active) {
   display: none;
 }
@@ -74,9 +73,17 @@ body {
     padding: 20px 0;
     cursor: pointer
   }
-  li:hover, li.active {
+	li:hover {
+    background: darken($dark-blue, 5%);
+    a {
+	    color:#FFF
+	  };
+	}
+  li.active {
     background: darken($dark-blue, 10%);
-    a{color:#FFF};
+    a {
+	    color:#FFF
+	  };
   }
   a {
     color: #fff;
@@ -111,7 +118,7 @@ body {
   border-top: 10px solid #999;
 }
 .update:nth-child(even) {
-  border-top: 10px solid #544e64;
+  border-top: 10px solid $dark-blue;
 }
 .blue {
   border-top: 10px solid #6499a3;
@@ -205,21 +212,7 @@ body {
 	float: left;
 	margin-right: 10px;
 }
-#share {
-	width: 940px;
-	margin: 0 auto;
-	background: #fff;
-	padding: 40px;
-}
-#share img {
-	max-width: 900px;
-	margin: 0 auto;
-	display: block;
-}
-.share_link {
-	display: block;
-	text-align: center;
-}
+
 .avatar {
 	width: 80px;
 	height: 80px;
@@ -233,9 +226,44 @@ body {
 	margin: 40px 0 20px 0;
 }
 
+/*-----------------------------------
+
+Sharing CSS
+
+-----------------------------------*/
+
+#share {
+	width: 940px;
+	margin: 0 auto;
+	background: #fff;
+	padding: 40px;
+	-moz-box-shadow: 5px 5px 10px #999;
+	-webkit-box-shadow: 5px 5px 10px #999;
+	box-shadow: 5px 5px 10px #999;
+}
+#share img {
+	max-width: 900px;
+	margin: 0 auto;
+	display: block;
+}
+.share_link {
+	display: block;
+	text-align: center;
+}
+
+/*-----------------------------------
+
+Pagination
+
+-----------------------------------*/
+
 .pagination {
 	.prev, .next, .first, .last {display:none;}
 }
 
-#pages {background:#f7f7f7 url('funneldesign.jpg') no-repeat center top;height:1500px;width:1600px;margin: 0 auto;}
+/*-----------------------------------
+
+Invoices
+
+-----------------------------------*/
 

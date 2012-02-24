@@ -2,7 +2,7 @@
 %html{:class => 'no-js', :lang => 'en'}
   %head
     %meta{:charset => 'utf-8'}
-    %title Freelance Deck
+    %title FunnelHQ | Business Management for Freelances
     %script{:src =>'http://html5shim.googlecode.com/svn/trunk/html5.js'}
     
     %link{:href =>'http://fonts.googleapis.com/css?family=Lato:400,700', :rel =>'stylesheet', :type =>'text/css'}
@@ -18,31 +18,31 @@
   %body
     #sidebar
       %ul
-        %li
+        %li{:class => "#{nav_link_class('dashboards')}"}
           =link_to 'Dashboard', dashboard_path
           %span Your dashboard
 
-        %li
+        %li{:class => "#{nav_link_class('projects')}"}
           =link_to 'Projects', projects_path
           %span Manage projects
 
-        %li
+        %li{:class => "#{nav_link_class('tasks')}"}
           = link_to 'Tasks', tasks_path
           %span Manage tasks
  
-        %li
+        %li{:class => "#{nav_link_class('clients')}"}
           = link_to 'Clients', clients_path
           %span Manage clients
 
-        %li
+        %li{:class => "#{nav_link_class('invoices')}"}
           = link_to 'Invoices', invoices_path
           %span Manage invoices
 
-        %li
+        %li{:class => "#{nav_link_class('issues')}"}
           = link_to 'Issues', issues_path
           %span Assign issues to projects
 
-        %li
+        %li{:class => "#{nav_link_class('uploads')}"}
           = link_to 'Uploads', uploads_path
           %span Upload files
 
