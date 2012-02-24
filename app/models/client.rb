@@ -2,6 +2,8 @@ class Client
   
   include Core::Mongoid::Document
   
+  EMAIL_REGEX = /^[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
+  
   ## fields ##
   
   field :first_name, :type => String
@@ -12,7 +14,7 @@ class Client
   ## Validation ##
   
   validates_presence_of :first_name, :last_name
-  validates :email, presence: true, uniqueness: true, format: { with: /^[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i }
+  validates :email, presence: true, uniqueness: true, format: { with: EMAIL_REGEX }
   
   ## ##
   

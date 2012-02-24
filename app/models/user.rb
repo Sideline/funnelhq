@@ -7,6 +7,8 @@ class User
   USER_ROLES = %w(admin client collaborator)
   
   UPLOAD_LIMIT = 11000000
+  
+  EMAIL_REGEX = /^[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
 
   ## Database authenticatable
   
@@ -44,10 +46,7 @@ class User
      
   validates_presence_of :first_name, :last_name
   
-  validates :email, 
-            presence: true, 
-            uniqueness: true, 
-            format: { with: /^[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i }
+  validates :email, presence: true, uniqueness: true, format: { with: EMAIL_REGEX }
   
   ## associations ##
   
