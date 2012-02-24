@@ -24,6 +24,7 @@ class Invoice
   embeds_many :line_items
   
   accepts_nested_attributes_for :line_items
+  
   validates_associated :line_items
   
   ## methods ##
