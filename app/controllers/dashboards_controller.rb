@@ -3,7 +3,7 @@ class DashboardsController < ApplicationController
   respond_to :html
   
   # There is a lot of querying here that might be pretty slow. 
-  # Will look at refactoring this feed stuff
+  
   def index
     @projects = @user.projects
     feed_candidates = @projects | @user.tasks | @user.issues

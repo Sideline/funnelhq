@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   
   # Only skip this for static pages
+  
   before_filter :authenticate_user!
   
   before_filter :find_user
@@ -11,17 +12,12 @@ class ApplicationController < ActionController::Base
   private 
   
   # Used in all controllers to find the current user
-  #
-  # @param 
-  # @return []
+
   def find_user
     @user = current_user
   end
   
   # Render the correct layout for a given action
-  #
-  # @param 
-  # @return [String] the layout to use
 
   def layout_by_resource
     if controller_name == 'registrations' && action_name == 'new'

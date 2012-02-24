@@ -7,7 +7,7 @@ class ApiV1::BaseController < ActionController::Base
   private
   
   def authenticate_user!
-    @api_user = User.first(conditions: { api_key: params[:key] })
+    @api_user = User.first(conditions: {api_key: params[:key]})
     unless @api_user 
       respond_with({:error => "Token is invalid." })
     end
