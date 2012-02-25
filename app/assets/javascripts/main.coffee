@@ -2,8 +2,7 @@
 # Main.coffee. Initialize your application from here
 #
 
-# Builds nested form rows for the invoice section of this application. 
-# This was preferable to using a gem to do this
+# Builds dynamic nested form fields for the invoice section of this application. 
 
 NestedFormBuilder = 
   
