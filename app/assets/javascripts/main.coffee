@@ -9,7 +9,9 @@ NestedFormBuilder =
     "<label for='invoice_line_items_attributes_0_qty'>Qty</label>"
 
   gen_input: (id, type) ->
-    "<input type='text' size='30' name='invoice[line_items_attributes][" + id + "][" + type + "]' id='invoice_line_items_attributes_" + id + "_" + type + "'>"
+    a = "<input type='text' size='30' name='invoice[line_items_attributes]["
+    b = "]' id='invoice_line_items_attributes_"
+    a + id + "][" + type + b + id + "_" + type + "'>"
 
   new_row: (id) ->
     a = NestedFormBuilder.gen_input(id, "qty")  
