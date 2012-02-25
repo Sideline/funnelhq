@@ -207,14 +207,17 @@ body {
   display: block;
   width: 400px;
 }
+
 .alert {
   margin: 20px 0;
 }
+
 .message {
   background: #f6f6f6;
   border: 1px solid #eee;
   padding: 10px;@include border-radius(5px);
 }
+
 .field.date select {
   width: 180px;
   float: left;

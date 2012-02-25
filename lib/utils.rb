@@ -1,12 +1,11 @@
 # General Application Utility Module
 
+require 'enumerator'
+
 module Utils
   
-  module Math
-    
-    def megabye_to_bytes(bytes)
-      
-    end
+  # Functional programming utils
+  def partition(arr, n)
+    arr.enum_for(:each_slice, n).to_a
   end
-
 end

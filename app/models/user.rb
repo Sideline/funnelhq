@@ -118,7 +118,14 @@ class User
   # @return [Boolean]
   
   def first_login?
-    self.sign_in_count == 1 && self.projects.count == 0 && self.clients.count == 0 && self.tasks.count == 0
+    
+    m = ['projects', 'clients', 'tasks'].map { |n| n.to_sym }
+    
+    coll = m.map do |k|
+      self.send(k).count
+    end.unshift(self.sign_in_count)
+    
+    return coll.reject{ |x| x.nil?}.inject(:+) == 1
   end
   
   # Generate a unique api key for this user
