@@ -7,9 +7,12 @@ class Upload
   
   has_mongoid_attached_file :file,
     :storage => :s3,
-      :s3_credentials => "#{Rails.root}/config/s3.yml",
+      :s3_credentials => {
+        :access_key_id => ENV['S3_KEY'],
+        :secret_access_key => ENV['S3_SECRET']
+      },
       :bucket => ENV['S3_BUCKET'],
-      :path => ":attachment/:id/:filename"
+      :path => ":attachment/#{self.user.id}/:id/:filename"
     
   ## Validation ##
   
