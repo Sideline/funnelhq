@@ -3,16 +3,16 @@
 #
 
 NestedFormBuilder = 
-
-  # Returns a new label tag
-  gen_label: (id) -> 
-    "<label for='invoice_line_items_attributes_0_qty'>Qty</label>"
+  
+  # Generates a new form builder input field
+  # @returns [String]
 
   gen_input: (id, type) ->
     a = "<input type='text' size='30' name='invoice[line_items_attributes]["
     b = "]' id='invoice_line_items_attributes_"
     a + id + "][" + type + b + id + "_" + type + "'>"
 
+  # Generates a new nested row and appends it to the tree
   new_row: (id) ->
     a = NestedFormBuilder.gen_input(id, "qty")  
     b = NestedFormBuilder.gen_input(id, "description")
@@ -26,14 +26,13 @@ NavUtils =
       href = $(this).find('a').attr('href')
       window.location = href
 
-#
-# This module invokes the core parts of our app that need to run
-
 class Core
 
   initialize: () ->
     NavUtils.clickable()  
-   
+
+# Doc ready 
+
 jQuery ($) ->
 
   core = new Core
