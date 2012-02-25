@@ -275,12 +275,12 @@ Sharing CSS
 
 #share {
   width: 940px;
-  margin: 0 auto;
+  margin: 40px auto;
   background: #fff;
   padding: 40px;
-  -moz-box-shadow: 5px 5px 10px #999;
-  -webkit-box-shadow: 5px 5px 10px #999;
-  box-shadow: 5px 5px 10px #999;
+  -moz-box-shadow: 1px 2px 2px #999;
+  -webkit-box-shadow: 1px 2px 2px #999;
+  box-shadow: 1px 2px 2px #999;
 }
 
 #share img {
@@ -310,6 +310,8 @@ Invoices
 
 -----------------------------------*/
 
+#invoice_view, #invoice_view body {background:#eee;}
+
 #add_line_item {
   float:right;
 }
@@ -317,4 +319,11 @@ Invoices
 .invoice_line{
   margin-bottom:5px;	
 }
+
+/*-----------------------------------
+
+Pages
+
+-----------------------------------*/
+
 

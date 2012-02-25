@@ -63,7 +63,7 @@ class InvoicesController < ApplicationController
   # Allows users to share invoices with clients
   def view
     @client = @user.clients.find(@invoice.client_id)
-    render :layout => 'share'
+    render :layout => 'invoice'
   end
   
   # Send an invoice to a client

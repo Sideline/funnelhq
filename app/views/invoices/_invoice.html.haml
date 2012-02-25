@@ -30,4 +30,4 @@
 
   %h2== Total #{user_currency(@invoice.total)}
 
-  %p Thanks for your custom. If you have any questions about this invoice don't hesitate to get in touch.
+  = current_user.account.invoice_message

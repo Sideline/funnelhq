@@ -15,5 +15,9 @@
     = f.label :currency
     = f.select :currency, current_user.account.currency_array.map{|curr| [curr, curr]}
 
+  .field
+    = f.label :invoice_message
+    = f.text_area :invoice_message, :rows => 5
+
   .actions
     = f.submit 'Save'

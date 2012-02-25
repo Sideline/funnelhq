@@ -10,6 +10,7 @@ class Account
 
   field :time_zone
   field :currency, :type => String, :default => 'gbp'
+  field :invoice_message, :default => 'Thank you for your custom.'
   
   # Returns a string representation of account currency
   # Example: Account.last.get_currency => '&pound;'
@@ -27,7 +28,7 @@ class Account
   # @return [Array] an array of supported currencies
   
   def currency_array
-    CURRENCY_SYMBOLS.keys.map{ |c| c.to_s}
+    CURRENCY_SYMBOLS.keys.map{ |c| c.to_s }
   end
   
 end
