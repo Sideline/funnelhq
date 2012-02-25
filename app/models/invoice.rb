@@ -26,7 +26,11 @@ class Invoice
   accepts_nested_attributes_for :line_items
   
   validates_associated :line_items
-  
+
+  scope :within_range, lambda { |x, y|
+    where(:date => {'$gte' => x,'$lt' => y})
+  }
+
   ## methods ##
   
   # Define some helper method for invoice statuses
@@ -54,4 +58,14 @@ class Invoice
     # Return the sum of the items
     self.total = res.inject(:+)    
   end
+  
+  # Return an array of month names i.e [jan, feb, march] etc
+  #
+  # @param 
+  # @return [ Integer ] the sum of all line items
+  
+  def months_as_array
+    (1..12).map {|m| [Date::MONTHNAMES[m]]}
+  end
+
 end

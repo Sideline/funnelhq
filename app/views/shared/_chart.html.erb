@@ -21,12 +21,12 @@ function drawMouseoverVisualization() {
 	        data.addColumn('number', 'Sales');
 	        data.addColumn('number', 'Expenses');
 	        data.addRows([
-	          ['January', 1000, 400],
-	          ['February', 1170, 460],
-	          ['March', 660, 320],
-	          ['April', 330, 140],
-	          ['April', 230, 240],
-	          ['April', 730, 140]
+	          ['January', <%= current_user.amount_invoiced_for_month('january')%>, 0],
+	          ['February', <%= current_user.amount_invoiced_for_month('february')%>, 0],
+	          ['March', <%= current_user.amount_invoiced_for_month('march')%>, 0],
+	          ['April', <%= current_user.amount_invoiced_for_month('april')%>, 0],
+	          ['May', <%= current_user.amount_invoiced_for_month('may')%>, 0],
+	          ['June', <%= current_user.amount_invoiced_for_month('june')%>, 0],
 	        ]);
 	
 

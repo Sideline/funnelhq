@@ -61,7 +61,14 @@ class User
 
   ## Attr Accessors ##
   
-  attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me, :avatar_url, :account
+  attr_accessible :first_name, 
+                  :last_name, 
+                  :email, 
+                  :password, 
+                  :password_confirmation, 
+                  :remember_me, 
+                  :avatar_url, 
+                  :account
   
   before_save :generate_api_key
   
@@ -171,12 +178,13 @@ class User
     self.invoices.sum(:total).to_f
   end
   
-  # Returns true if this user owns an account
+  # Returns the amount invoiced for a given month
   #
-  # @param 
-  # @return [Float]
+  # @param [String] the start of a month i.e amount_invoiced_for_month('january')
+  # @return [Float] the total amount invoiced
   
-  def account_owner?
-    
+  def amount_invoiced_for_month(m)
+    d = Date.parse(m)
+    self.invoices.within_range(d, ((d + 1.month) - 1.day)).sum(:total)
   end
 end
