@@ -12,7 +12,7 @@ class Upload
         :secret_access_key => ENV['S3_SECRET']
       },
       :bucket => ENV['S3_BUCKET'],
-      :path => ":attachment/#{self.user.id}/:id/:filename"
+      :path => ":attachment/:id/:filename"
     
   ## Validation ##
   
