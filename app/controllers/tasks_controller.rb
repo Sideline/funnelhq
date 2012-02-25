@@ -2,10 +2,10 @@ class TasksController < ApplicationController
   
   respond_to :html, :json
   
-  before_filter :find_task, :only => [:show, :edit, :update, :destroy]
+  before_filter :find_task, :only => [:show, :edit, :update, :destroy, :complete_task]
   
   def index
-    @tasks = @user.tasks.active.order_by([:project_title, :asc]).page(params[:page])
+    @tasks = @user.tasks.order_by([:project_title, :asc]).page(params[:page])
     respond_with @tasks
   end
 

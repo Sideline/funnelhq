@@ -16,4 +16,8 @@ describe User do
     user.number_of_projects.should equal 0
   end
   
+  it "should have no projects when first created" do
+    user.number_of_projects.should equal 0
+  end
+  
 end

@@ -41,7 +41,6 @@ jQuery ($) ->
   core = new Core
   core.initialize()
 
-  $('#new_row').click ->
-   
+  $('#add_line_item').click ->
     cnt = $('#nested_items tr').length
     NestedFormBuilder.new_row(cnt)

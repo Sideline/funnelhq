@@ -2,6 +2,8 @@ class Task
   
   include Core::Mongoid::Document
   
+  STATUSES = %w(in-progress on-hold complete)
+  
   ## validations ##
   
   validates_presence_of :title
@@ -13,12 +15,12 @@ class Task
   ## fields ##
   
   field :title, :type => String
-  field :complete, :type => Boolean, :default => false
+  field :status, :type => String, :default => 'in-progress'
   field :project_title, :type => String
   
   ## Scope ##
   
-  scope :active, :where => {:complete => false}
+  scope :active, :where => {:status => 'in-progress'}
 
   ## methods ##
   

@@ -12,8 +12,8 @@ class ProjectsController < ApplicationController
   # Refactor this into scopes and models
   def show
     @project = @user.projects.find(params[:id])
-    @tasks = @user.tasks.where(project_title: @project.title)
-    @issues = @user.tasks.where(project_title: @project.title)
+    @tasks = @user.tasks.where(project_title: @project.title).limit(10)
+    @issues = @user.issues.where(project_title: @project.title).limit(10)
     
     respond_with @project, @tasks, @issues
   end

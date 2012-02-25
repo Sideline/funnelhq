@@ -7,7 +7,7 @@
   %table
     %tr
       %th Title
-      %th Status
+      %th Project
       %th Description
       %th
       %th
@@ -16,7 +16,7 @@
     - @issues.each do |issue|
       %tr
         %td= issue.title
-        %td= issue.status
+        %td= issue.project_title
         %td= issue.description
         %td= link_to 'Show', issue
         %td= link_to 'Edit', edit_issue_path(issue)

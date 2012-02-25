@@ -1,11 +1,13 @@
 %ul
+  %li= pretty_date Date.today
   %li= link_to 'Dashboard', dashboard_path
-  - if user_signed_in? 
-    %li= link_to 'Logout', destroy_user_session_path, :method=>'delete'   
-  - else
-    %li= link_to 'Login', new_user_session_path
 
   - if user_signed_in?
     %li= link_to 'My account', edit_user_registration_path
   - else 
     %li= link_to 'Sign up', new_user_registration_path
+
+  - if user_signed_in? 
+    %li= link_to 'Logout', destroy_user_session_path, :method=>'delete'   
+  - else
+    %li= link_to 'Login', new_user_session_path

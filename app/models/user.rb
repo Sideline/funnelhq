@@ -33,7 +33,7 @@ class User
   field :last_sign_in_ip,    :type => String
   
   ## Fields ##
-
+  field :account_owner, :type => Boolean, :default => false
   field :first_name, :type => String
   field :last_name, :type => String
   field :avatar_url, :type => String
@@ -50,18 +50,33 @@ class User
   
   ## associations ##
   
+  referenced_in :account
+  
   embeds_many :projects
   embeds_many :clients
   embeds_many :uploads
   embeds_many :tasks
   embeds_many :invoices
   embeds_many :issues
-  
+
   ## Attr Accessors ##
   
-  attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me, :avatar_url
+  attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me, :avatar_url, :account
   
   before_save :generate_api_key
+  
+  before_create :create_admin_account
+  
+  # Before a user gets created we need to associate them with an account
+  #
+  # @param 
+  # @return []
+  
+  def create_admin_account
+    account = Account.create!
+    self.account = account
+    self.account_owner = true
+  end
   
   # Define some helper method for user roles
   #
@@ -154,5 +169,14 @@ class User
   
   def invoice_total
     self.invoices.sum(:total).to_f
+  end
+  
+  # Returns true if this user owns an account
+  #
+  # @param 
+  # @return [Float]
+  
+  def account_owner?
+    
   end
 end

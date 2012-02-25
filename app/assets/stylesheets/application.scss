@@ -56,10 +56,12 @@ body {
   display: inline;
   line-height: 40px;
   margin-right: 20px;
+  color: #ddd;
 }
 
 #nav a {
-  color: #fff;
+  color: #ddd;
+  &:hover {color:#fff;}
 }
 
 #sidebar {
@@ -307,4 +309,6 @@ Pagination
 Invoices
 
 -----------------------------------*/
+
+#add_line_item {float:right;}
 

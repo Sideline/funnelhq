@@ -14,9 +14,5 @@
     = f.label "Project"
     = f.select :project_title, current_user.projects.collect{ |project| [project.title, project.title] }.unshift(["N/A", ""])
 
-  -if controller.action_name == "edit"
-    .field
-      = f.label :complete
-      = f.check_box :complete
   .actions
     = f.submit 'Save'

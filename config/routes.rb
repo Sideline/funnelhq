@@ -15,7 +15,7 @@ Baseapp::Application.routes.draw do
   match 'dashboard', :to => 'dashboards#index'
   
   # Resource routes
-  
+  resources :accounts
   resources :projects
   resources :issues
   resources :uploads
