@@ -73,17 +73,13 @@ body {
     padding: 20px 0;
     cursor: pointer
   }
-	li:hover {
+  li:hover {
     background: darken($dark-blue, 5%);
-    a {
-	    color:#FFF
-	  };
+    a {color:#FFF};
 	}
   li.active {
     background: darken($dark-blue, 10%);
-    a {
-	    color:#FFF
-	  };
+    a {color:#FFF};
   }
   a {
     color: #fff;
