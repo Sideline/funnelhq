@@ -13,11 +13,17 @@ namespace :heroku do
     system 'git push heroku master'
   end
   
+  def clean_assets
+    system 'rake assets:clean'   
+  end
+  
   task :deploy do
     puts "\nPreparing application for deployment to Heroku at #{Time.now}\n\n"
+    clean_assets()
     precompile_assets()
     git_checkin()
     heroku_push()
+    clean_assets()
     puts "\nApplication deployed to Heroku at #{Time.now}"
   end
 
