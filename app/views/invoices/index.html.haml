@@ -1,8 +1,8 @@
 %h1 Invoices
 
-%h3== Total to date: #{current_user.invoice_total}
-%h3 Invoiced : $300 
-%h3 Unpaid : $23
+%h3== Total to date: #{user_currency(current_user.invoice_total)}
+%h3== This Month : #{user_currency(current_user.amount_invoiced_for_month(Time.now.strftime('%A')))}
+
 
 = render 'shared/chart'
 

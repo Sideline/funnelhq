@@ -21,12 +21,18 @@ function drawMouseoverVisualization() {
 	        data.addColumn('number', 'Sales');
 	        data.addColumn('number', 'Expenses');
 	        data.addRows([
-	          ['January', <%= current_user.amount_invoiced_for_month('january')%>, 0],
-	          ['February', <%= current_user.amount_invoiced_for_month('february')%>, 0],
+	          ['Jan', <%= current_user.amount_invoiced_for_month('january')%>, 0],
+	          ['Feb', <%= current_user.amount_invoiced_for_month('february')%>, 0],
 	          ['March', <%= current_user.amount_invoiced_for_month('march')%>, 0],
 	          ['April', <%= current_user.amount_invoiced_for_month('april')%>, 0],
 	          ['May', <%= current_user.amount_invoiced_for_month('may')%>, 0],
 	          ['June', <%= current_user.amount_invoiced_for_month('june')%>, 0],
+	          ['July', <%= current_user.amount_invoiced_for_month('july')%>, 0],
+	          ['Aug', <%= current_user.amount_invoiced_for_month('august')%>, 0],
+	          ['Sept', <%= current_user.amount_invoiced_for_month('september')%>, 0],
+	          ['Oct', <%= current_user.amount_invoiced_for_month('october')%>, 0],
+	          ['Nov', <%= current_user.amount_invoiced_for_month('november')%>, 0],
+	          ['Dec', <%= current_user.amount_invoiced_for_month('december')%>, 0],
 	        ]);
 	
 

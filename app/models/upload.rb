@@ -5,14 +5,20 @@ class Upload
   
   CATEGORY = %w(document design contract file).map {|type| type.camelize}.sort
   
-  has_mongoid_attached_file :file,
-    :storage => :s3,
-      :s3_credentials => {
-        :access_key_id => ENV['S3_KEY'],
-        :secret_access_key => ENV['S3_SECRET']
-      },
-      :bucket => ENV['S3_BUCKET'],
-      :path => ":attachment/:id/:filename"
+  # This could be extracted into a more elegant set of config options.
+  
+  if Rails.env.production?
+    has_mongoid_attached_file :file,
+      :storage => :s3,
+        :s3_credentials => {
+          :access_key_id => ENV['S3_KEY'],
+          :secret_access_key => ENV['S3_SECRET']
+        },
+        :bucket => ENV['S3_BUCKET'],
+        :path => ":attachment/:id/:filename"
+  else
+    has_mongoid_attached_file :file 
+  end
     
   ## Validation ##
   

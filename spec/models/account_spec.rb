@@ -1,5 +1,12 @@
 require 'spec_helper'
 
 describe Account do
-  pending "add some examples to (or delete) #{__FILE__}"
+  
+  describe "get_currency" do
+    
+  end
+  
+  describe "currency_array" do
+    
+  end
 end

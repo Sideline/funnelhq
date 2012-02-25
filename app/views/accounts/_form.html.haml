@@ -11,5 +11,9 @@
     = f.label :time_zone
     = f.time_zone_select( "time_zone", nil, :default => "Pacific Time (US & Canada)" )
 
+  .field
+    = f.label :currency
+    = f.select :currency, current_user.account.currency_array.map{|curr| [curr, curr]}
+
   .actions
     = f.submit 'Save'

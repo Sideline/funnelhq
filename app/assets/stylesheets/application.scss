@@ -310,5 +310,11 @@ Invoices
 
 -----------------------------------*/
 
-#add_line_item {float:right;}
+#add_line_item {
+  float:right;
+}
+
+.invoice_line{
+  margin-bottom:5px;	
+}
 

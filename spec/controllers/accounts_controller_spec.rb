@@ -8,7 +8,7 @@ describe AccountsController do
   
   describe "GET 'index'" do
     it "should redirect" do
-      get 'index'
+      get :index
       response.should be_redirect
     end
   end
@@ -31,7 +31,8 @@ describe AccountsController do
 
   describe "GET 'edit'" do
     it "returns http success" do
-      get 'edit'
+      account = Factory.create(:account)
+      get :edit, :id => account.id
       response.should be_success
     end
   end

@@ -2,14 +2,15 @@
 
   %h1 Invoice
 
-  %p== Invoice ID/Reference: #{@invoice.id}
-  %p== Invoice Date: #{@invoice.date}
+  %p.invoice_line== Invoice ID/Reference: #{@invoice.id}
+  %p.invoice_line== Invoice Date: #{@invoice.date}
+
+  %p.invoice_line== To: #{@client.name}
+  %p.invoice_line== From: #{@user.name}
+
   %p 
     Payment Due:
     %strong== #{@invoice.date + 30.days} (30 days)
-
-  %p== To: #{@client.name}
-  %p== From: #{@user.name} 
 
   %table#invoice
     %tr
@@ -27,6 +28,6 @@
           %td= line_item.price
           %td= (line_item.qty * line_item.price)
 
-  %h2== Total #{@invoice.total}
+  %h2== Total #{user_currency(@invoice.total)}
 
   %p Thanks for your custom. If you have any questions about this invoice don't hesitate to get in touch.
