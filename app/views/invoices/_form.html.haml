@@ -17,7 +17,7 @@
 	
     = f.fields_for :line_items do |builder|
 
-      %table
+      %table#nested_items
         %tr
           %td
             = builder.label :qty
@@ -28,6 +28,8 @@
           %td
             = builder.label :price
             = builder.text_field :price
+
+  %p#new_row Add Line Item
 
   .actions
     = f.submit 'Save'

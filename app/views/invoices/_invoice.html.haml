@@ -17,14 +17,15 @@
       %th Description
       %th Price
       %th Total
-
-    - @invoice.line_items.each do |line_item|
+    
+    #nested_line_items
+      - @invoice.line_items.each do |line_item|
  
-      %tr
-        %td= line_item.qty
-        %td= line_item.description
-        %td= line_item.price
-        %td= (line_item.qty * line_item.price)
+        %tr
+          %td= line_item.qty
+          %td= line_item.description
+          %td= line_item.price
+          %td= (line_item.qty * line_item.price)
 
   %h2== Total #{@invoice.total}
 

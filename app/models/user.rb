@@ -6,7 +6,7 @@ class User
   
   USER_ROLES = %w(admin client collaborator)
   
-  UPLOAD_LIMIT = 11000000
+  UPLOAD_LIMIT = 5000000
   
   EMAIL_REGEX = /^[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
 

@@ -13,7 +13,11 @@ class InvoicesController < ApplicationController
 
   def new
     @invoice = @user.invoices.new
-    @invoice.line_items.build
+    
+    1.times do
+      @invoice.line_items.build
+    end
+    
     respond_with @invoice
   end
   
