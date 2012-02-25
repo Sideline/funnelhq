@@ -125,7 +125,7 @@ class User
       self.send(k).count
     end.unshift(self.sign_in_count)
     
-    return coll.reject{ |x| x.nil?}.inject(:+) == 1
+    return coll.reject{ |x| x.nil? }.inject(:+) == 1
   end
   
   # Generate a unique api key for this user
