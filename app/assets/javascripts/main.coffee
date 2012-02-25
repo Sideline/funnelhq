@@ -2,6 +2,9 @@
 # Main.coffee. Initialize your application from here
 #
 
+# Builds nested form rows for the invoice section of this application. 
+# This was preferable to using a gem to do this
+
 NestedFormBuilder = 
   
   # Generates a new form builder input field
@@ -13,6 +16,7 @@ NestedFormBuilder =
     a + id + "][" + type + b + id + "_" + type + "'>"
 
   # Generates a new nested row and appends it to the tree
+
   new_row: (id) ->
     a = NestedFormBuilder.gen_input(id, "qty")  
     b = NestedFormBuilder.gen_input(id, "description")
