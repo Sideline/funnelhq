@@ -45,6 +45,3 @@ jQuery ($) ->
    
     cnt = $('#nested_items tr').length
     NestedFormBuilder.new_row(cnt)
-    
-
-  
