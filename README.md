@@ -10,7 +10,7 @@ With Funnel you can manage your entire business from one centralised location.
 
 This project is still in development
 
-A live version is running at http://freelancedeck.herokuapp.com
+A live version is running at http://funnelhq.herokuapp.com
 
 You can login with the following email and password: 
 
