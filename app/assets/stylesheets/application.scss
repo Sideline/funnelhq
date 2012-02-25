@@ -47,14 +47,17 @@ body {
   position:relative;
   z-index:99;
 }
+
 #nav ul {
   float: right;
 }
+
 #nav li {
   display: inline;
   line-height: 40px;
   margin-right: 20px;
 }
+
 #nav a {
   color: #fff;
 }
@@ -73,20 +76,24 @@ body {
     padding: 20px 0;
     cursor: pointer
   }
+
   li:hover {
     background: darken($dark-blue, 5%);
     a {color:#FFF};
-	}
+  }
+
   li.active {
     background: darken($dark-blue, 10%);
     a {color:#FFF};
   }
+
   a {
     color: #fff;
     margin-left: 20px;
     padding-top: 10px;
     text-transform: uppercase;
   }
+
   li span {
     display: block;
     color: #999;
@@ -142,12 +149,15 @@ body {
 }
 
 #user_stats {
+	
   margin: 40px 0;
+
   li {
     display: inline;
     font-size: 72px;
     margin-right: 20px;
     color: #2c2a34;
+
     span {
       font-size: 18px;
       color: #544e64;
@@ -170,11 +180,13 @@ body {
 #home_nav {
   width: 100%;
   height: 40px;
-  background: #2c2a34;;
+  background: #2c2a34;
+
   li {
     line-height: 40px;
     margin-left: 20px;
   }
+
   li a {
     color: #fff;
   }
@@ -265,11 +277,13 @@ Sharing CSS
   -webkit-box-shadow: 5px 5px 10px #999;
   box-shadow: 5px 5px 10px #999;
 }
+
 #share img {
   max-width: 900px;
   margin: 0 auto;
   display: block;
 }
+
 .share_link {
   display: block;
   text-align: center;
