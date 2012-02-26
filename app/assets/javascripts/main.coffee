@@ -43,7 +43,6 @@ jQuery ($) ->
   
   $('#sidebar').height($(document).height());
   
-
   $('#add_line_item').click ->
     cnt = $('#nested_items tr').length
     NestedFormBuilder.new_row(cnt)
