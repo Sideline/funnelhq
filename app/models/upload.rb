@@ -23,6 +23,7 @@ class Upload
   ## Validation ##
   
   validates_presence_of :title
+  
   validates_attachment_presence :file
   
   ## associations ##

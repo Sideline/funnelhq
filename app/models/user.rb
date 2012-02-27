@@ -6,7 +6,7 @@ class User
   
   USER_ROLES = %w(admin client collaborator)
   
-  UPLOAD_LIMIT = 5000000
+  UPLOAD_LIMIT = 10000
   
   EMAIL_REGEX = /^[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
   
@@ -83,6 +83,17 @@ class User
   before_save :generate_api_key
   
   before_create :create_admin_account
+  
+  # Define methods for accessing account limit information
+  #
+  # @param 
+  # @return []
+  
+  ['upload', 'invoice', 'project'].each do |_item|
+    define_method("#{_item}_limit?") do
+      self.account.get_setting(self.account.account_plan, _item)
+    end
+  end
   
   # Before a user gets created we need to associate them with an account
   #
