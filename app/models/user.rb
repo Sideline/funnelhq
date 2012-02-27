@@ -9,6 +9,8 @@ class User
   UPLOAD_LIMIT = 5000000
   
   EMAIL_REGEX = /^[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
+  
+  CODES = APP_CONFIG['invite_codes']
 
   ## Database authenticatable
   
@@ -39,6 +41,8 @@ class User
   field :avatar_url, :type => String
   field :api_key, :type => String
   field :role, :type => String, :default => 'admin'
+  
+  field :invite_code, :type => String
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
     
@@ -68,7 +72,13 @@ class User
                   :password_confirmation, 
                   :remember_me, 
                   :avatar_url, 
-                  :account
+                  :account,
+                  :invite_code
+                  
+  validates_each :invite_code, :on => :create do |record, attr, value|
+    record.errors.add attr, "Please enter correct invite code" unless
+      value && CODES.include?(value)
+  end
   
   before_save :generate_api_key
   

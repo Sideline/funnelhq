@@ -58,3 +58,17 @@ Baseapp::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 end
+
+ActionMailer::Base.delivery_method = :smtp
+
+ActionMailer::Base.smtp_settings = {
+  :address => "",
+  :port => 587,
+  :domain => "",
+  :authentication => :login,
+  :user_name => "",
+  :password => "",
+  :enable_starttls_auto => false
+}
+
+APP_CONFIG = YAML.load_file(File.join(Rails.root, "config", "app_config.yml"))

@@ -2,9 +2,14 @@
 	
 <h2>Sign up</h2>
 
+<p>Have an invite code? Welcome to the party!</p>
+
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 
   <%= devise_error_messages! %>
+
+  <div><%= f.label :invite_code %>
+  <%= f.text_field :invite_code %></div>
 
   <div><%= f.label :first_name %>
   <%= f.text_field :first_name %></div>

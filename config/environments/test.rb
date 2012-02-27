@@ -37,3 +37,15 @@ Baseapp::Application.configure do
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
 end
+
+ActionMailer::Base.delivery_method = :smtp
+
+ActionMailer::Base.smtp_settings = {
+  :address => "",
+  :port => 587,
+  :domain => "",
+  :authentication => :login,
+  :user_name => "",
+  :password => "",
+  :enable_starttls_auto => false
+}

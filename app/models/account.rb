@@ -10,7 +10,7 @@ class Account
 
   field :time_zone
   field :currency, :type => String, :default => 'gbp'
-  field :invoice_message, :default => 'Thank you for your custom.'
+  field :invoice_message, :default => 'Thank you for your custom. We look forward to working with you again.'
   
   # Returns a string representation of account currency
   # Example: Account.last.get_currency => '&pound;'

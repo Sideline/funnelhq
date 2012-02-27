@@ -14,7 +14,7 @@ Baseapp::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
@@ -27,4 +27,24 @@ Baseapp::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  
+  config.action_mailer.perform_deliveries = true
+  
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 end
+
+ActionMailer::Base.delivery_method = :smtp
+
+ActionMailer::Base.smtp_settings = {
+  :address => "",
+  :port => 587,
+  :domain => "",
+  :authentication => :login,
+  :user_name => "",
+  :password => "",
+  :enable_starttls_auto => false
+}
+
+APP_CONFIG = YAML.load_file(File.join(Rails.root, "config", "app_config.yml"))
+
+
