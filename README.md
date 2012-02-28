@@ -24,7 +24,7 @@ This app uses
 + MongoDB
 + Rails 3
 + Clojure
-+ Amazon s3 for file storage
++ Amazon S3 for file storage
 
 ## Install
 
