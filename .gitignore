@@ -23,5 +23,4 @@ pickle-email-*.html
 /db/mongodumps
 /public/assets
 
-/config/app_config.yml
 
