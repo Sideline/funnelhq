@@ -1,5 +1,5 @@
 (ns funnelhq.core
-	(use 'clojure.java.io :as io]))
+  (use 'clojure.java.io :as io]))
 
 (def *rails-log-file* "log/development.log")
 
