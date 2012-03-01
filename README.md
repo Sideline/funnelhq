@@ -6,6 +6,8 @@ This is the open source version of the app running at funnelhq.com aimed at thos
 
 It's built with Ruby on Rails, Clojure and MongoDB.
 
+![](http://funnelhq.com/public/images/3.jpg)
+
 With Funnel you can manage your entire business from one centralised location.
 
 This project is still in development
